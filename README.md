@@ -6,3 +6,7 @@ https://premium.wpmudev.org/blog/how-to-build-your-own-wordpress-contact-form-an
 
 Demo form built upon tutorial by John Morris available here:
 How Build a Simple HTML Form Using PHP and MySQL (https://youtu.be/wp6Ngpk5XiY?list=PL530D33D6E548481F)
+
+Displaying data built upon tutorial by John Morris available here:
+How to Display PHP Form Data
+(https://www.youtube.com/watch?v=b-VUL9qfZAc&spfreload=1)
