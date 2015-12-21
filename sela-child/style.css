@@ -1,0 +1,27 @@
+/*
+Theme Name: Sela Child
+Theme URI: https://wordpress.com/themes/sela-child/
+Description: Sela is not your typical business theme. Vibrant, bold, and clean, with lots of space for large images, this theme will look great on all devices, from desktop to mobile.
+Version: 1.0.10
+Author: Automattic
+Author URI: https://wordpress.com/themes/
+Template: sela
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sela
+Tags: light, pink, white, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images,  full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Sela is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Sela is a fork of Motif by WordPress.com http://wordpress.com/.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+.main-navigation {
+    background-color: #FFDE2E;
