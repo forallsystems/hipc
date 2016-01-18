@@ -6,6 +6,13 @@
  */
 
 get_header(); ?>
+<style>
+#content {
+	background-color: #fff;
+	padding: 3em 4.661%;
+	position: relative;
+}
+</style>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
