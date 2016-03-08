@@ -1,7 +1,7 @@
 <?php
 function add_custom_fields_to_rss() {
 	if (get_post_type()=='events') {
-		$fields = array( 'event_name', 'event_start_date', 'event_end_date', 'event_end_time', 'event_start_time', 'event_description', 'event_notes', 'event_cost', 'event_organizer', 'event_twitter', 'event_website', 'venue_name', 'venue_address', 'venue_address_2', 'venue_city', 'venue_state', 'venue_zipcode');
+		$fields = array( 'event_name', 'event_start_date', 'event_end_date', 'event_end_time', 'event_start_time', 'event_description', 'event_notes', 'event_cost', 'event_organizer', 'event_twitter', 'event_website', 'venue_name', 'venue_street_address', 'venue_address_2', 'venue_city', 'venue_state', 'venue_zipcode');
 		$post_id = get_the_ID();
 		foreach($fields as $field)
 			if ($value = get_post_meta($post_id,$field,true))

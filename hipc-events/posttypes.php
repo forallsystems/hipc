@@ -344,26 +344,29 @@ function my_custom_taxonomies() {
 
 add_action( 'init', 'my_custom_taxonomies');
 
-/*function event_load_templates( $original_template ) {
-       if ( get_query_var( 'post_type' ) !== 'events' ) {
-               return;
-       }
-       if ( is_archive() || is_search() ) {
-               if ( file_exists( get_stylesheet_directory(). '/archive-event.php' ) ) {
-                     return get_stylesheet_directory() . '/archive-event.php';
-               } else {
-                       return plugin_dir_path( __FILE__ ) . 'templates/archive-event.php';
-               }
-       } elseif(is_singular('event')) {
-               if (  file_exists( get_stylesheet_directory(). '/single-event.php' ) ) {
-                       return get_stylesheet_directory() . '/single-event.php';
-               } else {
-                       return plugin_dir_path( __FILE__ ) . 'templates/single-event.php';
-               }
-       }else{
-        return get_page_template();
-       }
-        return $original_template;
+function event_load_templates( $original_template ) {
+    if ( get_query_var( 'post_type' ) !== 'events' ) {
+        return;
+    }
+
+    if ( is_archive() || is_search() ) {
+        if ( file_exists( get_stylesheet_directory(). '/archive-events.php' ) ) {
+            return get_stylesheet_directory() . '/archive-events.php';
+        } else {
+            return plugin_dir_path( __FILE__ ) . 'templates/archive-events.php';
+        }
+    }
+
+    else {
+
+            if (  file_exists( get_stylesheet_directory(). '/single-events.php' ) ) {
+                return get_stylesheet_directory() . '/single-events.php';
+            } else {
+                return plugin_dir_path( __FILE__ ) . 'templates/single-events.php';
+            }
+
+    }
+    return $original_template;
+    
 }
 add_action( 'template_include', 'event_load_templates' );
-*/
