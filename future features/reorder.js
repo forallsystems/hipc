@@ -38,3 +38,13 @@ jQuery(document).ready(function($) {
 
 	});
 });
+
+/* To be added to main plugin page to properly load this script
+	if (  $pagenow == 'edit.php' && $typenow == 'events') {
+		wp_enqueue_script( 'reorder-js', plugins_url( 'js/reorder.js', __FILE__ ), array( 'jquery', 'jquery-ui-sortable' ), '20160216', true);
+		wp_localize_script( 'reorder-js', 'HIPC_EVENT_LISTING', array(
+			'security' 	=> wp_create_nonce( 'hipc-event-order' ),
+			'sucess'	=> 'Events sort order has been saved.',
+			'failure'	=> 'There was an error saving the sort order, or you do not have the proper permissions.'
+			) );
+	}*/
