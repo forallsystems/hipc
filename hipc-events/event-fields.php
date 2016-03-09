@@ -4,7 +4,7 @@ function event_add_custom_metabox() {
 
 	add_meta_box(
 			'event_meta',
-			__( 'Event Listing' ),
+			__( 'Event Details' ),
 			'event_meta_callback',
 			'events',
 			'normal',
@@ -27,26 +27,23 @@ function change_featured_image_text( $content ) {
 
 add_filter( 'admin_post_thumbnail_html', 'change_featured_image_text' );
 
+function change_title_text ( $title ) {
+	$screen = get_current_screen();
+
+	if ( 'events' == $screen->post_type ) {
+		$title = 'Enter Event Name';
+	}
+
+	return $title;
+}
+
+add_filter ('enter_title_here', 'change_title_text');
+
 function event_meta_callback( $post ) {
 	//number used once - validate data actually came from the form you made
 
 	wp_nonce_field( basename(__FILE__), 'events_nonce');
 	$event_stored_meta = get_post_meta( $post->ID ); ?>
-
-
-	<div>
-		<div class="meta-row">
-			<div class="meta-th">
-				<label for="event-name" class="event-row-title"><?php _e( 'Event Name', 'hipc-events' ); ?></label>
-			</div>
-			<div class="meta-td">
-				<input type="text" name="event_name" id="event-name" 
-				value="<?php if ( ! empty ($event_stored_meta['event_name'] ) ) {
-					echo esc_attr( $event_stored_meta['event_name'][0] ); 
-				} ?> "/>
-			</div>
-		</div>
-	</div>
 
 	<div>
 		<div class="meta-row">
@@ -144,28 +141,20 @@ function event_meta_callback( $post ) {
 		</div>
 	</div>
 
-	<div class="meta">
-		<div class="meta-th">
-			<span>Event Description</span>
-		</div>
+		<div>
+		<div class="meta-row">
+	        <div class="meta-th">
+	          <label for="event-description" class="event-row-title"><?php _e( 'Event Description', 'hipc-events' ) ?></label>
+	        </div>
+	        <div class="meta-td">
+	          <textarea name="event_description" class="event-textarea" id="event-description"><?php
+	          if ( ! empty ( $event_stored_meta['event_description'] ) ) {
+		          echo esc_attr( $event_stored_meta['event_description'][0] );
+	          } ?></textarea>
+	        </div>
+	    </div>
 	</div>
-	<div>
-		<div class="meta-editor">
 
-			<?php
-
-			$content = get_post_meta( $post->ID, 'event_description', true);
-			$editor = 'event_description';
-			$settings = array(
-				'textarea_rows' => 8,
-				'media_buttons' => false,
-				);
-
-			wp_editor( $content, $editor, $settings);
-
-			?>
-		</div>
-	</div>
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
@@ -230,9 +219,7 @@ function event_meta_callback( $post ) {
 	          <textarea name="event_notes" class="event-textarea" id="event-notes"><?php
 	          if ( ! empty ( $event_stored_meta['event_notes'] ) ) {
 		          echo esc_attr( $event_stored_meta['event_notes'][0] );
-	          }
-	          ?>
-	          </textarea>
+	          } ?></textarea>
 	        </div>
 	    </div>
 	</div>
@@ -244,16 +231,13 @@ function event_meta_callback( $post ) {
 function event_meta_save( $post_id ) {
 	// checks save status
 
+
 	$is_autosave = wp_is_post_autosave( $post_id);
 	$is_revision = wp_is_post_revision( $post_id);
 	$is_valid_nonce = (isset( $_POST['events_nonce']) && wp_verify_nonce ( $_POST[ 'events_nonce'], basename(__FILE__))) ? 'true' : 'false';
 
 	if ( $is_autosave || $is_revision || !$is_valid_nonce) {
 		return;
-	}
-
-	if ( isset( $_POST['event_name'] ) ) {
-		update_post_meta( $post_id, 'event_name', sanitize_text_field($_POST[ 'event_name' ] ) );
 	}
 
 	if ( isset( $_POST['event_start_date'] ) ) {

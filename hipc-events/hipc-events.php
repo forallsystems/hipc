@@ -26,10 +26,8 @@ if ( ! defined( 'ABSPATH')) {
 }
 
 require_once ( plugin_dir_path(__FILE__) . 'posttypes.php' );
-//require_once ( plugin_dir_path(__FILE__) . 'event-settings.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'venue-fields.php' );
-//require_once ( plugin_dir_path(__FILE__) . 'event-shortcode.php' );
 require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-rss.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-template-load.php' );
 
@@ -48,7 +46,6 @@ function event_admin_enqueue_scripts() {
 		
 		wp_enqueue_script( 'event-admin-js', plugins_url( 'js/admin-events.js', __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), '20160212', true);
 		wp_enqueue_script( 'event-admin-js', plugins_url( 'js/admin-events.js', __FILE__ ), array( 'jquery', 'jquery-ui-timepicker' ), '20160214', true);
-		wp_enqueue_script( 'event-custom-quicktags', plugins_url( 'js/event-quicktags.js', __FILE__ ), array( 'quicktags' ), '20160208', true );
 		wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
 	}
 

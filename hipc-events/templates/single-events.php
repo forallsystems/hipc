@@ -5,7 +5,7 @@
 <?php
 $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
-  <?php echo get_post_meta($post->ID, 'event_name', true); ?> </br>
+  <h1><?php the_title(); ?></h1>
   <?php the_post_thumbnail('medium');?>
 
   <?php echo get_post_meta($post->ID, 'event_description', true); ?></br>

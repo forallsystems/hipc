@@ -13,6 +13,18 @@ function venue_add_custom_metabox() {
 
 add_action(  'add_meta_boxes', 'venue_add_custom_metabox' );
 
+function change_title_text_venue ( $title ) {
+	$screen = get_current_screen();
+
+	if ( 'venues' == $screen->post_type ) {
+		$title = 'Enter Venue Name';
+	}
+
+	return $title;
+}
+
+add_filter ('enter_title_here', 'change_title_text_venue');
+
 function venue_meta_callback( $post ) {
 	//number used once - validate data actually came from the form you made
 

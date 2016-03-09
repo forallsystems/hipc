@@ -28,8 +28,7 @@ $my_query = new WP_Query($args);
 if( $my_query->have_posts() ) {
   while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-    <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
-  <?php echo get_post_meta($post->ID, 'event_name', true); ?> </br>
+   <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></h1></a></p>
   <?php echo get_post_meta($post->ID, 'event_description', true); ?></br>
   <?php the_post_thumbnail('medium');?>
   <?php echo get_post_meta($post->ID, 'event_start_date', true); ?></br>
