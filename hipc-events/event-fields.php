@@ -115,7 +115,6 @@ function event_meta_callback( $post ) {
 			</div>
 	</div>
 
-	<div>
 		<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-start-time" class="event-row-title"><?php _e( 'Event Start Time', 'hipc-events' ); ?></label>
@@ -126,9 +125,8 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
 
-	<div>
+
 	<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-end-time" class="event-row-title"><?php _e( 'Event End Time', 'hipc-events' ); ?></label>
@@ -139,9 +137,9 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
 
-		<div>
+
+
 		<div class="meta-row">
 	        <div class="meta-th">
 	          <label for="event-description" class="event-row-title"><?php _e( 'Event Description', 'hipc-events' ) ?></label>
@@ -153,9 +151,8 @@ function event_meta_callback( $post ) {
 	          } ?></textarea>
 	        </div>
 	    </div>
-	</div>
 
-	<div>
+
 		<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-cost" class="event-row-title"><?php _e( 'Event Cost', 'hipc-events' ); ?></label>
@@ -167,8 +164,8 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
-	<div>
+
+
 		<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-website" class="event-row-title"><?php _e( 'Event Website', 'hipc-events' ); ?></label>
@@ -180,9 +177,9 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
 
-	<div>
+
+
 		<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-organizer" class="event-row-title"><?php _e( 'Event Organizer', 'hipc-events' ); ?></label>
@@ -194,9 +191,9 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
 
-	<div>
+
+
 		<div class="meta-row">
 			<div class="meta-th">
 				<label for="event-twitter" class="event-row-title"><?php _e( 'Event Twitter', 'hipc-events' ); ?></label>
@@ -208,9 +205,9 @@ function event_meta_callback( $post ) {
 				} ?> "/>
 			</div>
 		</div>
-	</div>
+
 	
-	<div>
+
 		<div class="meta-row">
 	        <div class="meta-th">
 	          <label for="event-notes" class="event-row-title"><?php _e( 'Event Notes', 'hipc-events' ) ?></label>
@@ -222,8 +219,6 @@ function event_meta_callback( $post ) {
 	          } ?></textarea>
 	        </div>
 	    </div>
-	</div>
-
 
 	<?php	
 }
