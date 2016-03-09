@@ -6,7 +6,7 @@ add_filter('archive_template','events_archive');
 function events_single($single_template){
   global $post;
   $found = locate_template('single-events.php');
-  if($post->post_type == 'events' && $found != ''){
+  if($post->post_type == 'events' && $found == ''){
     $single_template = dirname(__FILE__).'/templates/single-events.php';
   }
   return $single_template;
