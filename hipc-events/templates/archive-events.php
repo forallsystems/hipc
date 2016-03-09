@@ -17,7 +17,10 @@ $args=array(
   'post_type' => $type,
   'post_status' => 'publish',
   'posts_per_page' => -1,
-  'caller_get_posts'=> 1
+  'caller_get_posts'=> 1,
+  'meta_key'        => 'event_start_date',
+  'orderby'         => 'meta_value',
+  'order'           => 'DSC'
 );
 
 $my_query = null;
@@ -28,6 +31,7 @@ if( $my_query->have_posts() ) {
     <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
   <?php echo get_post_meta($post->ID, 'event_name', true); ?> </br>
   <?php echo get_post_meta($post->ID, 'event_description', true); ?></br>
+  <?php the_post_thumbnail('medium');?>
   <?php echo get_post_meta($post->ID, 'event_start_date', true); ?></br>
   <?php echo get_post_meta($post->ID, 'event_end_date', true); ?> </br>
   <?php echo get_post_meta($post->ID, 'event_start_time', true); ?> </br>

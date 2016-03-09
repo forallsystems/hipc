@@ -6,6 +6,8 @@
 $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
   <?php echo get_post_meta($post->ID, 'event_name', true); ?> </br>
+  <?php the_post_thumbnail('medium');?>
+
   <?php echo get_post_meta($post->ID, 'event_description', true); ?></br>
   <?php echo get_post_meta($post->ID, 'event_start_date', true); ?></br>
   <?php echo get_post_meta($post->ID, 'event_end_date', true); ?> </br>
