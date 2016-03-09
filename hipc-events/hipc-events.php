@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH')) {
 	exit;
 }
 
-require_once ( plugin_dir_path(__FILE__) . 'posttypes.php' );
+require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-post-types.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'venue-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-rss.php' );
@@ -47,15 +47,6 @@ function event_admin_enqueue_scripts() {
 		wp_enqueue_script( 'event-admin-js', plugins_url( 'js/admin-events.js', __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), '20160212', true);
 		wp_enqueue_script( 'event-admin-js', plugins_url( 'js/admin-events.js', __FILE__ ), array( 'jquery', 'jquery-ui-timepicker' ), '20160214', true);
 		wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
-	}
-
-	if (  $pagenow == 'edit.php' && $typenow == 'events') {
-		wp_enqueue_script( 'reorder-js', plugins_url( 'js/reorder.js', __FILE__ ), array( 'jquery', 'jquery-ui-sortable' ), '20160216', true);
-		wp_localize_script( 'reorder-js', 'HIPC_EVENT_LISTING', array(
-			'security' 	=> wp_create_nonce( 'hipc-event-order' ),
-			'sucess'	=> 'Events sort order has been saved.',
-			'failure'	=> 'There was an error saving the sort order, or you do not have the proper permissions.'
-			) );
 	}
 
 }
