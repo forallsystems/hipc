@@ -66,7 +66,7 @@ function my_custom_posttypes() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'supports'           => 'Default'
+        'supports'           =>  array( 'title' )
     );
 	register_post_type( 'venues', $args );
 }
