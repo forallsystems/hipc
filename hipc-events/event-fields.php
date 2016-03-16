@@ -79,7 +79,7 @@ function event_meta_callback( $post ) {
 				<?php   
 					$event_venue_name = get_post_meta( $selectedVenueID, 'venue_name', true); 
 					$event_street_address = get_post_meta( $selectedVenueID, 'venue_street_address', true);
-					$event_address_2 = get_post_meta( $selectedVenueID, 'venue_street_address_2', true);  
+					$event_address_2 = get_post_meta( $selectedVenueID, 'venue_address_2', true);  
 					$event_zipcode = get_post_meta( $selectedVenueID, 'venue_zipcode', true); 
 					$event_city = get_post_meta( $selectedVenueID, 'venue_city', true); 
 					$event_state = get_post_meta( $selectedVenueID, 'venue_state', true);
@@ -288,8 +288,8 @@ function event_meta_save( $post_id ) {
 	update_post_meta( $post_id, 'venue_street_address', sanitize_text_field($_POST[ 'venue_street_address' ] ) );
 	}
 
-	if ( isset( $_POST['venue_street_address_2'] ) ) {
-	update_post_meta( $post_id, 'venue_street_address_2', sanitize_text_field($_POST[ 'venue_street_address_2' ] ) );
+	if ( isset( $_POST['venue_address_2'] ) ) {
+	update_post_meta( $post_id, 'venue_address_2', sanitize_text_field($_POST[ 'venue_address_2' ] ) );
 	}
 
 	if ( isset( $_POST['venue_city'] ) ) {

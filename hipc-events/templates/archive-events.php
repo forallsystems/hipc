@@ -57,46 +57,47 @@ if( $my_query->have_posts() ) {
   ?>
 
   <?php if ( ! empty($event_start_date_value)): 
-    echo $event_start_date_value ?>
+    echo $event_start_date_value; ?>
     @
   <?php endif; ?>
 
   <?php if ( ! empty($event_start_time_value)): 
-    echo $event_start_time_value ?>
+    echo $event_start_time_value; ?>
     -
   <?php endif; ?> 
 
   <?php if ( ! empty($event_end_time_value)): 
-    echo $event_end_time_value ?>
+    echo $event_end_time_value; ?>
     <br />
   <?php endif; ?> 
 
   <?php if ( ! empty($venue_name_value)): 
-    echo $venue_name_value ?>
-    ,
+    echo $venue_name_value; ?>,
   <?php endif; ?> 
 
-  <?php if ( ! empty($venue_street_address_value)): 
-    echo $venue_street_address_value ?>
-    <?php if (! empty($venue_address_value_2)): ?>
-    ,
-    <?php echo $venue_address_value_2 ?>
-    <br />
-    <?php endif; ?>
-    <br />
-  <?php endif; ?> 
+  <?php if ( ! empty($venue_street_address_value)) {
+    echo $venue_street_address_value; 
+
+    if (! empty($venue_address_2_value)) {
+      echo ' '; 
+      echo $venue_address_2_value;
+      echo '<br />';
+    }
+    else {
+      echo '<br />';
+    }
+  } ?>
 
   <?php if ( ! empty($venue_city_value)): 
-    echo $venue_city_value ?>
-    ,
+    echo $venue_city_value; ?>,
   <?php endif; ?>
 
   <?php if ( ! empty($venue_state_value)): 
-    echo $venue_state_value ?>
+    echo $venue_state_value; ?>
   <?php endif; ?>
 
   <?php if ( ! empty($venue_zipcode_value)): 
-    echo $venue_zipcode_value ?>
+    echo $venue_zipcode_value; ?>
     <br />
   <?php endif; ?>
 
@@ -107,72 +108,72 @@ if( $my_query->have_posts() ) {
   <?php endif; ?>
 
   <?php if ( ! empty($event_description_value)): 
-    echo $event_description_value ?>
+    echo $event_description_value; ?>
     <br />
   <?php endif; ?>
 
     <?php if ( ! empty($event_notes_value)): 
-    echo $event_notes_value ?>
+    echo $event_notes_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_cost_value)): 
-    echo $event_cost_value ?>
+    echo $event_cost_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_organizer_value)): 
-    echo $event_organizer_value ?>
+    echo $event_organizer_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_twitter_value)): 
-    echo $event_twitter_value ?>
+    echo $event_twitter_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_website_value)): 
-    echo $event_website_value ?>
+    echo $event_website_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value)): 
-    echo $event_categories_value ?>
+    echo $event_categories_value; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value1)): 
-    echo $event_categories_value1 ?>
+    echo $event_categories_value1; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value2)): 
-    echo $event_categories_value2 ?>
+    echo $event_categories_value2; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value3)): 
-    echo $event_categories_value3 ?>
+    echo $event_categories_value3; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value4)): 
-    echo $event_categories_value4 ?>
+    echo $event_categories_value4; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value5)): 
-    echo $event_categories_value5 ?>
+    echo $event_categories_value5; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value6)): 
-    echo $event_categories_value6 ?>
+    echo $event_categories_value6; ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($event_categories_value7)): 
-    echo $event_categories_value7 ?>
+    echo $event_categories_value7; ?>
     <br />
   <?php endif; ?>
 
