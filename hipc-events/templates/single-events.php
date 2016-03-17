@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <a href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a>
-
+<p></p>
 <?php
 $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
