@@ -30,6 +30,7 @@ require_once ( plugin_dir_path(__FILE__) . 'event-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'venue-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-rss.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-template-load.php' );
+require_once ( plugin_dir_path(__FILE__) . 'hipc-menus.php' );
 
 function event_admin_enqueue_scripts() {
 	global $pagenow, $typenow;
