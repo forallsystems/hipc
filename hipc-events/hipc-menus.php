@@ -25,13 +25,6 @@ function auto_nav_creation_primary(){
                 'menu-item-status' => 'publish'
             ));
 
-        wp_update_nav_menu_item($menu->term_id, 0, array(
-                'menu-item-title' =>  __('RSS Feed'),
-                'menu-item-url' => home_url('index.php/feed/?post_type=events'),
-                'menu-item-type' => 'custom',
-                'menu-item-status' => 'publish'
-            ));
-
     //then you set the wanted theme  location
     $locations = get_theme_mod('nav_menu_locations');
     $locations['primary'] = $menu->term_id;

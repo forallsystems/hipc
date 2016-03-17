@@ -6,10 +6,9 @@
  */
 ?>
 
-<?php get_header(); ?>
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
 
+<?php get_header(); ?>
+<a href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a>
 <?php
 $type = 'events';
 $args=array(
@@ -184,8 +183,4 @@ if( $my_query->have_posts() ) {
 wp_reset_query();  // Restore global post data stomped by the_post().
 ?>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
