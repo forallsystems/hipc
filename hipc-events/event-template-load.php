@@ -1,6 +1,7 @@
 <?php
 add_filter('single_template','events_single');
 add_filter('archive_template','events_archive');
+add_filter('taxonomy_template', 'taxonomy_archive');
 
 //route single- template
 function events_single($single_template){
@@ -19,6 +20,17 @@ function events_archive($template){
     $exists_in_theme = locate_template($theme_files, false);
     if($exists_in_theme == ''){
       return plugin_dir_path(__FILE__) . '/templates/archive-events.php';
+    }
+  }
+  return $template;
+}
+
+function taxonomy_archive($template){
+  if(is_tax('subject')){
+    $theme_files = array('taxonomy.php');
+    $exists_in_theme = locate_template($theme_files, false);
+    if($exists_in_theme == ''){
+      return plugin_dir_path(__FILE__) . '/templates/taxonomy.php';
     }
   }
   return $template;

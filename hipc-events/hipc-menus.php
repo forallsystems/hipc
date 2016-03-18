@@ -30,4 +30,4 @@ function auto_nav_creation_primary(){
     $locations['primary'] = $menu->term_id;
     set_theme_mod( 'nav_menu_locations', $locations );
     }
-} ?>
+}

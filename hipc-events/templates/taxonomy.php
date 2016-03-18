@@ -1,12 +1,34 @@
+<?php
+/**
+ * Template Name: Page of Events
+ *
+ * Selectable from a dropdown menu on the edit page screen.
+ */
+?>
+
+
 <?php get_header(); ?>
 <a href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a>
-<p></p>
 <?php
-$event_fetch_meta = get_post_meta( get_the_ID() ); ?>
+$type = 'events';
+$args=array(
+  'post_type' => $type,
+  'post_status' => 'publish',
+  'posts_per_page' => -1,
+  'caller_get_posts'=> 1,
+  'meta_key'        => 'event_start_date',
+  'orderby'         => 'meta_value',
+  'order'           => 'DSC'
+);
 
-  <h1><?php the_title(); ?></h1>
+$my_query = null;
+$my_query = new WP_Query($args);
+if( $my_query->have_posts() ) {
+  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-  <?php 
+
+   <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></h1></a></p>
+<?php 
     $event_start_date_value = get_post_meta($post->ID, 'event_start_date', true);
     $event_start_time_value = get_post_meta($post->ID, 'event_start_time', true);
     $event_end_time_value = get_post_meta($post->ID, 'event_end_time', true);
@@ -109,8 +131,8 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     <br />
   <?php endif; ?>
 
-  <?php if ( ! empty($event_website_value)): ?>
-    <a href="<?php echo $event_website_value; ?>" target="_blank"><?php echo $event_website_value;?></a>
+  <?php if ( ! empty($event_website_value)): 
+    echo $event_website_value; ?>
     <br />
   <?php endif; ?>
 
@@ -153,5 +175,12 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     echo $event_categories_value7; ?>
     <br />
   <?php endif; ?>
+
+<?php
+  endwhile;
+
+}
+wp_reset_query();  // Restore global post data stomped by the_post().
+?>
 
 <?php get_footer(); ?>
