@@ -25,5 +25,12 @@ function add_custom_fields_to_rss() {
 			echo "<event_image>{$image_url[0]}</event_images>\n";
 			
 		}
+	if (get_post_type()=='venues') {
+		$fields = array( 'venue_name', 'venue_street_address', 'venue_address_2', 'venue_city', 'venue_state', 'venue_zipcode' );
+		$post_id = get_the_ID();
+		foreach($fields as $field)
+			if ($value = get_post_meta($post_id,$field,true))
+				echo "<{$field}>{$value}</{$field}>\n";
+		}
 	}
 	add_action('rss2_item', 'add_custom_fields_to_rss');

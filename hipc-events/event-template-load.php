@@ -10,6 +10,12 @@ function events_single($single_template){
   if($post->post_type == 'events' && $found == ''){
     $single_template = dirname(__FILE__).'/templates/single-events.php';
   }
+
+  $foundVenue = locate_template('single-venues.php');
+  if($post->post_type == 'venues' && $foundVenue == ''){
+    $single_template = dirname(__FILE__).'/templates/single-venues.php';
+  }
+
   return $single_template;
 }
 
@@ -20,6 +26,14 @@ function events_archive($template){
     $exists_in_theme = locate_template($theme_files, false);
     if($exists_in_theme == ''){
       return plugin_dir_path(__FILE__) . '/templates/archive-events.php';
+    }
+  }
+  
+  if(is_post_type_archive('venues')){
+    $theme_files = array('archive-venues.php');
+    $exists_in_theme = locate_template($theme_files, false);
+    if($exists_in_theme == ''){
+      return plugin_dir_path(__FILE__) . '/templates/archive-venues.php';
     }
   }
   return $template;
