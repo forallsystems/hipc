@@ -26,7 +26,7 @@ function events_archive($template){
 }
 
 function taxonomy_archive($template){
-  if(is_tax('subject')){
+  if(is_tax('subject') || is_tax('connected_learning') || is_tax('credentialing') || is_tax('event_type') || is_tax('hive_membership_status') || is_tax('grade_level') || is_tax('payment')){
     $theme_files = array('taxonomy.php');
     $exists_in_theme = locate_template($theme_files, false);
     if($exists_in_theme == ''){
