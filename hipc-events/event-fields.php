@@ -119,12 +119,46 @@ function event_meta_callback( $post ) {
 			<div class="meta-th">
 				<label for="event-start-time" class="event-row-title"><?php _e( 'Event Start Time', 'hipc-events' ); ?></label>
 			</div>
-			<div class="meta-td">
-				<input type="text" name="event_start_time" id="event-start-time" value="<?php if ( ! empty ($event_stored_meta['event_start_time'] ) ) {
-					echo esc_attr( $event_stored_meta['event_start_time'][0] ); 
-				} ?> "/>
+		<div class="time-hour">
+				<?php 
+				$selected = isset( $event_stored_meta['event_start_hour'] ) ? esc_attr( $event_stored_meta['event_start_hour'][0] ) : ”;?>
+				<select id="event-start-hour" name="event_start_hour">
+					<option selected disabled>Hour</option>
+					<option value="01"<?php selected( $selected, "01" );?>>01</option>
+					<option value="02"<?php selected( $selected, "02" );?>>02</option>
+					<option value="03"<?php selected( $selected, "03" );?>>03</option>
+					<option value="04"<?php selected( $selected, "04" );?>>04</option>
+					<option value="05"<?php selected( $selected, "05" );?>>05</option>
+					<option value="06"<?php selected( $selected, "06" );?>>06</option>
+					<option value="07"<?php selected( $selected, "07" );?>>07</option>
+					<option value="08"<?php selected( $selected, "08" );?>>08</option>
+					<option value="09"<?php selected( $selected, "09" );?>>09</option>
+					<option value="10"<?php selected( $selected, "10" );?>>10</option>
+					<option value="11"<?php selected( $selected, "11" );?>>11</option>
+					<option value="12"<?php selected( $selected, "12" );?>>12</option>
+				</select>
 			</div>
-		</div>
+			<div class="time-minute">
+				<?php 
+				$selected = isset( $event_stored_meta['event_start_minute'] ) ? esc_attr( $event_stored_meta['event_start_minute'][0] ) : ”;?>
+				<select id="event-start-minute" name="event_start_minute">
+					<option selected disabled>Minute</option>
+					<option value="00"<?php selected( $selected, "01" );?>>00</option>
+					<option value="15"<?php selected( $selected, "02" );?>>15</option>
+					<option value="30"<?php selected( $selected, "03" );?>>30</option>
+					<option value="45"<?php selected( $selected, "04" );?>>45</option>
+				</select>
+			</div>
+			<div class="time-am-pm">
+				<?php 
+				$selected = isset( $event_stored_meta['event_start_am_pm'] ) ? esc_attr( $event_stored_meta['event_start_am_pm'][0] ) : ”;?>
+				<select id="event-start-am-pm" name="event_start_am_pm">
+					<option selected disabled>AM/PM</option>
+					<option value="AM"<?php selected( $selected, "AM" );?>>AM</option>
+					<option value="PM"<?php selected( $selected, "PM" );?>>PM</option>
+				</select>
+			</div>
+	</div>
 
 
 	<div class="meta-row">
@@ -249,6 +283,18 @@ function event_meta_save( $post_id ) {
 
 	if ( isset( $_POST['event_start_time'] ) ) {
 	update_post_meta( $post_id, 'event_start_time', sanitize_text_field($_POST[ 'event_start_time' ] ) );
+	}
+
+	if ( isset( $_POST['event_start_hour'] ) ) {
+	update_post_meta( $post_id, 'event_start_hour', sanitize_text_field($_POST[ 'event_start_hour' ] ) );
+	}
+
+	if ( isset( $_POST['event_start_minute'] ) ) {
+	update_post_meta( $post_id, 'event_start_minute', sanitize_text_field($_POST[ 'event_start_minute' ] ) );
+	}
+
+	if ( isset( $_POST['event_start_am_pm'] ) ) {
+	update_post_meta( $post_id, 'event_start_am_pm', sanitize_text_field($_POST[ 'event_start_am_pm' ] ) );
 	}
 
 	if ( isset( $_POST['event_description'] ) ) {
