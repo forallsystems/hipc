@@ -113,15 +113,14 @@
       <?php endif; ?>
 
       <?php if ( ! empty($event_twitter_value)): ?>
-      <a href="<?php if (!strstr($event_twitter_value, "http://") ) {echo "http://";} echo $event_twitter_value; ?>"><?php echo ($event_twitter_value) ; ?></a>
-      <br />
+      <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_twitter_value; ?>"><?php echo ($event_twitter_value) ; ?></a>
+        <br />
       <?php endif; ?>
 
       <?php if ( ! empty($event_website_value)): ?>
-      <a href="<?php if (!strstr($event_website_value, "http://") ) {echo "http://";} echo $event_website_value; ?>"><?php echo ($event_website_value) ; ?></a>
-      <br />
+      <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_website_value; ?>"><?php echo ($event_website_value) ; ?></a>
+        <br />
       <?php endif; ?>
-
 
       <?php if ( ! empty($event_categories_value)): 
       echo $event_categories_value; ?>
