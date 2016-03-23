@@ -40,7 +40,7 @@ function venue_meta_callback( $post ) {
 				<input type="text" name="venue_name" id="venue-name" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_name'] ) ) {
 					echo esc_attr( $venue_stored_meta['venue_name'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,7 @@ function venue_meta_callback( $post ) {
 				<input type="text" name="venue_street_address" id="venue-street-address" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_street_address'] ) ) {
 					echo esc_attr( $venue_stored_meta['venue_street_address'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 	</div>
@@ -68,7 +68,7 @@ function venue_meta_callback( $post ) {
 				<input type="text" name="venue_address_2" id="venue-address-2" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_address_2'] ) ) {
 					echo esc_attr( $venue_stored_meta['venue_address_2'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 	</div>
@@ -82,7 +82,7 @@ function venue_meta_callback( $post ) {
 				<input type="text" name="venue_city" id="venue-city" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_city'] ) ) {
 					echo esc_attr( $venue_stored_meta['venue_city'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 	</div>
@@ -162,7 +162,7 @@ function venue_meta_callback( $post ) {
 				<input type="text" name="venue_zipcode" id="venue-zipcode" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_zipcode'] ) ) {
 					echo esc_attr( $venue_stored_meta['venue_zipcode'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 	</div>

@@ -239,7 +239,7 @@ function event_meta_callback( $post ) {
 				<input type="text" name="event_cost" id="event-cost" 
 				value="<?php if ( ! empty ($event_stored_meta['event_cost'] ) ) {
 					echo esc_attr( $event_stored_meta['event_cost'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 
@@ -252,7 +252,7 @@ function event_meta_callback( $post ) {
 				<input type="text" name="event_website" id="event-website" 
 				value="<?php if ( ! empty ($event_stored_meta['event_website'] ) ) {
 					echo esc_attr( $event_stored_meta['event_website'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 
@@ -266,7 +266,7 @@ function event_meta_callback( $post ) {
 				<input type="text" name="event_organizer" id="event-organizer" 
 				value="<?php if ( ! empty ($event_stored_meta['event_organizer'] ) ) {
 					echo esc_attr( $event_stored_meta['event_organizer'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 
@@ -280,7 +280,7 @@ function event_meta_callback( $post ) {
 				<input type="text" name="event_twitter" id="event-twitter" 
 				value="<?php if ( ! empty ($event_stored_meta['event_twitter'] ) ) {
 					echo esc_attr( $event_stored_meta['event_twitter'][0] ); 
-				} ?> "/>
+				} ?>"/>
 			</div>
 		</div>
 

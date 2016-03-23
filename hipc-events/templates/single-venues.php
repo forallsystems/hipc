@@ -15,7 +15,6 @@ $venue_fetch_meta = get_post_meta( get_the_ID() ); ?>
     $venue_zipcode_value = get_post_meta($post->ID, 'venue_zipcode', true);
   ?>
   
-  <?php echo $venue_name_value; ?>
   <?php if ( ! empty($venue_name_value)): 
     echo $venue_name_value; ?>,
   <?php endif; ?> 
