@@ -46,3 +46,13 @@
 	height: 100px;
 	width: 75%;
 }
+
+.time-hour {
+	float: left;
+}
+
+.time-minute {
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
