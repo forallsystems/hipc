@@ -1,5 +1,13 @@
 /*Main Style.css for HIPC event plugin*/
 
+h1 {
+	margin-bottom: .5em;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span {
+	 background-color: #FFDE2F;
+}
+
 .main-navigation {
 
     background-color: #FFDE2F;
@@ -31,4 +39,34 @@
     font-weight: normal;
     border: 1px solid;
     border-color: #AAA;
+}
+
+.event-date-time {
+	font-weight: bold;
+}
+
+.event-post {
+	border-bottom: 1px solid; 
+	border-color: #EEEEEE;
+	padding: 20px 0; }
+
+.venue-address {
+	font-weight: bold;
+}
+
+.venue-name {
+	color: #E1283D;
+}
+
+.venue-city {
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.event-detail-description {
+	
+}
+
+.event-image {
+	padding-right: 10px;
 }

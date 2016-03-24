@@ -52,131 +52,78 @@ if( $my_query->have_posts() ) {
     $event_categories_value6 = get_the_term_list( $post->ID, 'payment', '', ', ' ); 
     $event_categories_value7 = get_the_term_list( $post->ID, 'subject', '', ', ' ); 
   ?>
-<div class="event-title">
-   <p><a class="hipc-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a>
-<?php if ( ! empty($event_cost_value)): ?>
-    <span class="event-cost"><?php echo $event_cost_value; ?>
-    <br />
-  <?php endif; ?></span></h1></p>
+<div class="event-post">
+
+  <div class="event-title">
+     <p><a class="hipc-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a>
+      <?php if ( ! empty($event_cost_value)): ?>
+      <span class="event-cost"><?php echo $event_cost_value; ?>
+      <br />
+    <?php endif; ?></span></h1></p>
+  </div>
+
+  <div class="event-date-time">
+    <?php if ( ! empty($event_start_date_value)): ?>
+      <?php echo $event_start_date_value; ?>
+      @
+    <?php endif; ?>
+
+    <?php if ( ! empty($event_start_time_value)): 
+      echo $event_start_time_value; ?>
+      -
+    <?php endif; ?> 
+
+    <?php if ( ! empty($event_end_time_value)): 
+      echo $event_end_time_value; ?>
+      <br />
+    <?php endif; ?> 
+  </div>
+
+  <div class="venue-address">
+    <?php if ( ! empty($venue_name_value)): ?>
+      <span class="venue-name"><?php echo $venue_name_value; ?></span>,
+    <?php endif; ?>
+
+    <?php if ( ! empty($venue_street_address_value)) {
+      echo $venue_street_address_value; 
+
+      if (! empty($venue_address_2_value)) {
+        echo ' '; 
+        echo $venue_address_2_value;
+        echo '<br />';
+      }
+      else {
+        echo '<br />';
+      }
+    } ?>
+  </div>
+  <div class="venue-city">
+    <?php if ( ! empty($venue_city_value)): 
+      echo $venue_city_value; ?>,
+    <?php endif; ?>
+
+    <?php if ( ! empty($venue_state_value)): 
+      echo $venue_state_value; ?>
+    <?php endif; ?>
+
+    <?php if ( ! empty($venue_zipcode_value)): 
+      echo $venue_zipcode_value; ?>
+      <br />
+    <?php endif; ?>
+  </div>
+
+  <div class="event-description">
+    <?php if (has_post_thumbnail($post->ID)): ?>
+      <span class="event-image">
+      <?php the_post_thumbnail('medium'); ?></span>
+    <?php endif; ?>
+
+    <?php if ( ! empty($event_description_value)): ?>
+      <span class="event-detail-description"><?php echo $event_description_value; ?></span>
+    <?php endif; ?>
+     <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">Find out more >></a>
+  </div>
 </div>
-
-  <?php if ( ! empty($event_start_date_value)): 
-    echo $event_start_date_value; ?>
-    @
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_start_time_value)): 
-    echo $event_start_time_value; ?>
-    -
-  <?php endif; ?> 
-
-  <?php if ( ! empty($event_end_time_value)): 
-    echo $event_end_time_value; ?>
-    <br />
-  <?php endif; ?> 
-
-  <?php if ( ! empty($venue_name_value)): 
-    echo $venue_name_value; ?>,
-  <?php endif; ?> 
-
-  <?php if ( ! empty($venue_street_address_value)) {
-    echo $venue_street_address_value; 
-
-    if (! empty($venue_address_2_value)) {
-      echo ' '; 
-      echo $venue_address_2_value;
-      echo '<br />';
-    }
-    else {
-      echo '<br />';
-    }
-  } ?>
-
-  <?php if ( ! empty($venue_city_value)): 
-    echo $venue_city_value; ?>,
-  <?php endif; ?>
-
-  <?php if ( ! empty($venue_state_value)): 
-    echo $venue_state_value; ?>
-  <?php endif; ?>
-
-  <?php if ( ! empty($venue_zipcode_value)): 
-    echo $venue_zipcode_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if (has_post_thumbnail($post->ID)): ?>
-    <p>
-    <?php the_post_thumbnail('medium'); ?>
-    </p>
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_description_value)): 
-    echo $event_description_value; ?>
-    <br />
-  <?php endif; ?>
-
-    <?php if ( ! empty($event_notes_value)): 
-    echo $event_notes_value; ?>
-    <br />
-  <?php endif; ?>
-
-
-
-  <?php if ( ! empty($event_organizer_value)): 
-    echo $event_organizer_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_twitter_value)): ?>
-  <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_twitter_value; ?>"><?php echo ($event_twitter_value) ; ?></a>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_website_value)): ?>
-  <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_website_value; ?>"><?php echo ($event_website_value) ; ?></a>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value)): 
-    echo $event_categories_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value1)): 
-    echo $event_categories_value1; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value2)): 
-    echo $event_categories_value2; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value3)): 
-    echo $event_categories_value3; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value4)): 
-    echo $event_categories_value4; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value5)): 
-    echo $event_categories_value5; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value6)): 
-    echo $event_categories_value6; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_categories_value7)): 
-    echo $event_categories_value7; ?>
-    <br />
-  <?php endif; ?>
 
 <?php
   endwhile;
