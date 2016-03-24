@@ -31,6 +31,8 @@ if( $my_query->have_posts() ) {
     $venue_city_value = get_post_meta($post->ID, 'venue_city', true);
     $venue_state_value = get_post_meta($post->ID, 'venue_state', true);
     $venue_zipcode_value = get_post_meta($post->ID, 'venue_zipcode', true);
+    $venue_phone_value = get_post_meta($post->ID, 'venue_phone', true);
+    $venue_website_value = get_post_meta($post->ID, 'venue_website', true);
 
   ?>
 
@@ -63,6 +65,16 @@ if( $my_query->have_posts() ) {
     echo $venue_zipcode_value; ?>
     <br />
   <?php endif; ?>
+
+  <?php if ( ! empty($venue_phone_value)): 
+    echo $venue_phone_value; ?>
+    <br />
+  <?php endif; ?>
+
+<?php if ( ! empty($venue_website_value)): ?>
+      <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo $venue_website_value; ?>"><?php echo ($venue_website_value) ; ?></a>
+        <br />
+<?php endif; ?>
 
 <?php
   endwhile;

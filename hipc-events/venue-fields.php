@@ -167,6 +167,34 @@ function venue_meta_callback( $post ) {
 		</div>
 	</div>
 
+	<div>
+		<div class="meta-row">
+			<div class="meta-th">
+				<label for="venue-phone" class="venue-row-title"><?php _e( 'Venue Phone Number', 'hipc-events' ); ?></label>
+			</div>
+			<div class="meta-td">
+				<input type="text" name="venue_phone" id="venue-phone" 
+				value="<?php if ( ! empty ($venue_stored_meta['venue_phone'] ) ) {
+					echo esc_attr( $venue_stored_meta['venue_phone'][0] ); 
+				} ?>"/>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<div class="meta-row">
+			<div class="meta-th">
+				<label for="venue-website" class="venue-row-title"><?php _e( 'Venue Website', 'hipc-events' ); ?></label>
+			</div>
+			<div class="meta-td">
+				<input type="text" name="venue_website" id="venue-website" 
+				value="<?php if ( ! empty ($venue_stored_meta['venue_website'] ) ) {
+					echo esc_attr( $venue_stored_meta['venue_website'][0] ); 
+				} ?>"/>
+			</div>
+		</div>
+	</div>
+
 
 
 	<?php	
@@ -205,6 +233,14 @@ function venue_meta_save( $post_id ) {
 
 	if ( isset( $_POST['venue_zipcode'] ) ) {
 	update_post_meta( $post_id, 'venue_zipcode', sanitize_text_field($_POST[ 'venue_zipcode' ] ) );
+	}
+
+	if ( isset( $_POST['venue_phone'] ) ) {
+	update_post_meta( $post_id, 'venue_phone', sanitize_text_field($_POST[ 'venue_phone' ] ) );
+	}
+
+	if ( isset( $_POST['venue_website'] ) ) {
+	update_post_meta( $post_id, 'venue_website', sanitize_text_field($_POST[ 'venue_website' ] ) );
 	}
 
 }
