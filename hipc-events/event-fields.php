@@ -354,9 +354,8 @@ function event_meta_save( $post_id ) {
 	}
 
 	if ( isset( $_POST['event_description'] ) ) {
-	update_post_meta( $post_id, 'event_description', sanitize_text_field($_POST[ 'event_description' ] ) );
+	update_post_meta( $post_id, 'event_description', implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['event_description'] ) ) ));
 	}
-
 
 	if ( isset( $_POST['event_notes'] ) ) {
 	update_post_meta( $post_id, 'event_notes', sanitize_text_field($_POST[ 'event_notes' ] ) );

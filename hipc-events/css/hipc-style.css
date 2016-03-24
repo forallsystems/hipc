@@ -4,6 +4,11 @@ h1 {
 	margin-bottom: .5em;
 }
 
+.single-title {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span {
 	 background-color: #FFDE2F;
 }
@@ -45,6 +50,15 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 	font-weight: bold;
 }
 
+.event-date-time-single-h {
+	font-weight: bold;
+	font-size: large;
+}
+
+.event-date-time-single {
+	padding-bottom: 10px;
+}
+
 .event-post {
 	border-bottom: 1px solid; 
 	border-color: #EEEEEE;
@@ -64,9 +78,23 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 }
 
 .event-detail-description {
+	white-space:pre-line;
 	
 }
 
 .event-image {
 	padding-right: 10px;
+}
+
+.divider {
+	font-weight: thick;
+	padding-right: 10px;
+}
+
+.event-image-single {
+	text-align: center;
+}
+
+.event-description-single {
+	white-space:pre-line;
 }

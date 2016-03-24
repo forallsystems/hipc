@@ -3,8 +3,8 @@
 <p></p>
 <?php
 $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
-
-  <h1><?php the_title(); ?></h1>
+  <a href="<?php echo home_url('index.php/events') ?>"> << All events </a>
+  <h1 class="single-title"><?php the_title(); ?></h1>
 
   <?php 
     $event_start_date_value = get_post_meta($post->ID, 'event_start_date', true);
@@ -32,9 +32,9 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     $event_categories_value6 = get_the_term_list( $post->ID, 'payment', '', ', ' ); 
     $event_categories_value7 = get_the_term_list( $post->ID, 'subject', '', ', ' ); 
   ?>
-
-  <?php if ( ! empty($event_start_date_value)): 
-    echo $event_start_date_value; ?>
+  <div class="event-date-time-single">
+  <?php if ( ! empty($event_start_date_value)): ?>
+    <h2 class="event-date-time-single-h"><?php echo $event_start_date_value; ?>
     @
   <?php endif; ?>
 
@@ -44,11 +44,40 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
   <?php endif; ?> 
 
   <?php if ( ! empty($event_end_time_value)): 
-    echo $event_end_time_value; ?>
-    <br />
+    echo $event_end_time_value; ?></h2>
   <?php endif; ?> 
 
-  <?php if ( ! empty($venue_name_value)): 
+  <?php if ( ! empty($event_cost_value)): ?>
+    <span class="divider">|</span><span class="event-cost-single"><?php echo $event_cost_value; ?></span>
+  <?php endif; ?>
+  </div>
+
+<div class="event-image-single">
+  <?php if (has_post_thumbnail($post->ID)): ?>
+    <?php the_post_thumbnail('medium'); ?>
+  <?php endif; ?>
+  </div>
+  
+<div class="event-description-single">
+  <?php if ( ! empty($event_description_value)): 
+    echo $event_description_value; ?>
+  <?php endif; ?>
+</div>
+
+
+    <?php if ( ! empty($event_notes_value)): 
+    echo $event_notes_value; ?>
+    <br />
+  <?php endif; ?>
+
+
+
+  <?php if ( ! empty($event_organizer_value)): 
+    echo $event_organizer_value; ?>
+    <br />
+  <?php endif; ?>
+
+   <?php if ( ! empty($venue_name_value)): 
     echo $venue_name_value; ?>,
   <?php endif; ?> 
 
@@ -73,34 +102,8 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     echo $venue_state_value; ?>
   <?php endif; ?>
 
-  <?php if ( ! empty($venue_zipcode_value)): 
+    <?php if ( ! empty($venue_zipcode_value)): 
     echo $venue_zipcode_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if (has_post_thumbnail($post->ID)): ?>
-    <p>
-    <?php the_post_thumbnail('medium'); ?>
-    </p>
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_description_value)): 
-    echo $event_description_value; ?>
-    <br />
-  <?php endif; ?>
-
-    <?php if ( ! empty($event_notes_value)): 
-    echo $event_notes_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_cost_value)): 
-    echo $event_cost_value; ?>
-    <br />
-  <?php endif; ?>
-
-  <?php if ( ! empty($event_organizer_value)): 
-    echo $event_organizer_value; ?>
     <br />
   <?php endif; ?>
 
