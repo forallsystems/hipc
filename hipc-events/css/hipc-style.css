@@ -1,0 +1,34 @@
+/*Main Style.css for HIPC event plugin*/
+
+.main-navigation {
+
+    background-color: #FFDE2F;
+}
+
+.events-page-title {
+	text-align: center;
+	font-size: 24px;
+    font-weight: 400;
+}
+
+.hipc-event-url {
+	text-transform: none;
+}
+
+.entry-title {
+	text-transform: none;
+}
+
+.event-cost {
+    float: right;
+    text-transform: none;
+    background-color: #EEEEEE;
+    padding-left: 10px;
+    padding-right: 3px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    font-size: large;
+    font-weight: normal;
+    border: 1px solid;
+    border-color: #AAA;
+}

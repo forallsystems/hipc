@@ -51,3 +51,8 @@ function event_admin_enqueue_scripts() {
 
 }
 add_action( 'admin_enqueue_scripts', 'event_admin_enqueue_scripts' );
+
+function hipc_enqueue_style() {
+    wp_enqueue_style( 'hipc-style-css', plugins_url( 'css/hipc-style.css', __FILE__ ) );
+}
+add_action( 'wp_enqueue_scripts', 'hipc_enqueue_style', 9999 );

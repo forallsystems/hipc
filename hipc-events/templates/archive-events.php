@@ -8,6 +8,7 @@
 
 
 <?php get_header(); ?>
+<h2 class="events-page-title">Upcoming Events</h2>
 <a href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a>
 <?php
 $type = 'events';
@@ -25,9 +26,6 @@ $my_query = null;
 $my_query = new WP_Query($args);
 if( $my_query->have_posts() ) {
   while ($my_query->have_posts()) : $my_query->the_post(); ?>
-
-
-   <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></h1></a></p>
 <?php 
     $event_start_date_value = get_post_meta($post->ID, 'event_start_date', true);
     $event_start_time_value = get_post_meta($post->ID, 'event_start_time', true);
@@ -54,6 +52,13 @@ if( $my_query->have_posts() ) {
     $event_categories_value6 = get_the_term_list( $post->ID, 'payment', '', ', ' ); 
     $event_categories_value7 = get_the_term_list( $post->ID, 'subject', '', ', ' ); 
   ?>
+<div class="event-title">
+   <p><a class="hipc-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a>
+<?php if ( ! empty($event_cost_value)): ?>
+    <span class="event-cost"><?php echo $event_cost_value; ?>
+    <br />
+  <?php endif; ?></span></h1></p>
+</div>
 
   <?php if ( ! empty($event_start_date_value)): 
     echo $event_start_date_value; ?>
@@ -116,10 +121,7 @@ if( $my_query->have_posts() ) {
     <br />
   <?php endif; ?>
 
-  <?php if ( ! empty($event_cost_value)): 
-    echo $event_cost_value; ?>
-    <br />
-  <?php endif; ?>
+
 
   <?php if ( ! empty($event_organizer_value)): 
     echo $event_organizer_value; ?>

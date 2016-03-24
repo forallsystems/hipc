@@ -28,6 +28,7 @@
 	float: right;
 	width: 75%;
 }
+
 .meta {
 	margin-top: 20px;
 }
@@ -55,4 +56,8 @@
 	float: left;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.event-row-content.datepicker {
+	width: 20%;
 }
