@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php
 $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
-  <a href="<?php echo home_url('index.php/events') ?>"> << All events </a>
+  <a href="<?php echo home_url('index.php/events') ?>"> << All Events </a>
   <h1 class="single-title"><?php the_title(); ?></h1>
 
   <?php 
@@ -212,7 +212,7 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
   </div>
 
   <div class="clear"></div>
-  
+
 </div>
 
 <?php get_footer(); ?>
