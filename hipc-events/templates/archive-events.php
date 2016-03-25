@@ -112,17 +112,23 @@ if( $my_query->have_posts() ) {
     <?php endif; ?>
   </div>
 
-  <div class="event-description">
     <?php if (has_post_thumbnail($post->ID)): ?>
-      <span class="event-image">
-      <?php the_post_thumbnail('medium'); ?></span>
+      <div class="event-image">
+      <?php the_post_thumbnail('medium'); ?></div>
     <?php endif; ?>
 
     <?php if ( ! empty($event_description_value)): ?>
-      <span class="event-detail-description"><?php echo $event_description_value; ?></span>
+      <div class="event-description"><?php echo $event_description_value; ?>
+        <div class="link-to-single-event">
+          <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">Find out more >></a>
+        </div>
+      </div>
     <?php endif; ?>
-     <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">Find out more >></a>
-  </div>
+
+      <div class="clear"></div>
+
+     
+
 </div>
 
 <?php

@@ -77,13 +77,19 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 	margin-bottom: 1em;
 }
 
-.event-detail-description {
-	white-space:pre-line;
-	
+.event-image {
+	float:left; 
+	width:20%;
 }
 
-.event-image {
-	padding-right: 10px;
+.event-description {
+	float:right;
+	width:70%;
+	white-space:pre-line;
+}
+
+.clear {
+	clear:both;
 }
 
 .divider {
