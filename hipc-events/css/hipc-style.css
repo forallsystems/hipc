@@ -120,21 +120,9 @@ h1 {
     font-weight: 700;
 }
 
-h3#details-header {
-	
-}
-
-h3#venue-header {
-	
-}
-
-h3#other-header {
-	
-}
 
 h5#second-header {
 	padding-top: 10px;
-	
 }
 
 h3 {
@@ -169,5 +157,9 @@ h3 {
 	padding:0 10pt 0 0;
 	float:right;
 
+}
+
+.rss-icon {
+	float:right;
 }
 

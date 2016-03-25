@@ -8,8 +8,8 @@
 
 
 <?php get_header(); ?>
-<h2 class="events-page-title">Upcoming Events</h2>
-<a href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a>
+<h2 class="events-page-title">Event Calendar
+<a class="rss-icon" href="<?php echo home_url('index.php/feed/?post_type=events') ?>"><img src="<?php echo plugins_url( 'images/feed-icon-28x28.png', dirname(__FILE__) ); ?>"></a></h2>
 <?php
 $type = 'events';
 $args=array(

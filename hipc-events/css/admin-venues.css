@@ -10,7 +10,6 @@
 	max-width: 400px;
 	padding: 10px;
 }
-#loading-animation { display: none; }
 
 /* Field styles */
 .meta-row {
@@ -35,13 +34,7 @@
 	height: 100px;
 	width: 75%;
 }
-.quicktags-toolbar {
-	margin-bottom: 5px;
-	display: inline-block;
-	float: left;
-	background: #ffffff !important;
-	border-bottom: none !important;
-}
+
 .venue-textarea {
 	height: 100px;
 	width: 75%;
