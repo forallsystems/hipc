@@ -1,14 +1,6 @@
 /*Main Style.css for HIPC event plugin*/
 
-h1 {
-	margin-bottom: .5em;
-}
-
-.single-title {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
+/*Main navigation menu for Sela*/
 button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span {
 	 background-color: #FFDE2F;
 }
@@ -18,6 +10,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
     background-color: #FFDE2F;
 }
 
+h1 {
+	margin-bottom: .5em;
+}
+
+/*Calendar view*/
 .events-page-title {
 	text-align: center;
 	font-size: 24px;
@@ -48,15 +45,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 
 .event-date-time {
 	font-weight: bold;
-}
-
-.event-date-time-single-h {
-	font-weight: bold;
-	font-size: large;
-}
-
-.event-date-time-single {
-	padding-bottom: 10px;
 }
 
 .event-post {
@@ -92,9 +80,34 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 	clear:both;
 }
 
+/*Single event view*/
+
+.event-date-time-single-h {
+	font-size: 1.4em;
+    font-weight: 700;
+}
+
+.event-date-time-single {
+	padding-bottom: 10px;
+}
+
 .divider {
+	font-size: 1.4em;
 	font-weight: thick;
 	padding-right: 10px;
+}
+
+.event-cost-single {
+	font-weight: 500;
+	font-size: 1.3em;
+}
+
+.single-title {
+	font-size: 1.7em;
+	font-weight: 300;
+    letter-spacing: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .event-image-single {
@@ -103,4 +116,68 @@ button, input[type="button"], input[type="reset"], input[type="submit"], #infini
 
 .event-description-single {
 	white-space:pre-line;
+	padding-bottom: 30px;
 }
+
+.event-details-box-single {
+
+    padding: 2% 4%;
+	background-color: #FAFAFA;
+}
+
+.event-detail-box-label {
+	font-size: 1.4em;
+    font-weight: 700;
+}
+
+h3#details-header {
+	
+}
+
+h3#venue-header {
+	
+}
+
+h3#other-header {
+	
+}
+
+h5#second-header {
+	padding-top: 10px;
+	
+}
+
+h3 {
+	margin-bottom: 0;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+}
+
+.event-detail-labels {\
+	padding-top: 10px;
+	margin-bottom: 0;
+	text-transform: none;
+	font-size: 100%;
+	letter-spacing: 0px;
+}
+
+.details-column {
+
+	width:30%;
+	padding:0 10pt 0 0;
+	float:left;
+}
+
+.venue-column {
+	width:30%;
+	padding:0 10pt 0 0;
+	float:left
+}
+
+.other-column {
+	width:30%;
+	padding:0 10pt 0 0;
+	float:right;
+
+}
+
