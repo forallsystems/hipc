@@ -1,15 +1,5 @@
 /*Main Style.css for HIPC event plugin*/
 
-/*Main navigation menu for Sela*/
-button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span {
-	 background-color: #FFDE2F;
-}
-
-.main-navigation {
-
-    background-color: #FFDE2F;
-}
-
 h1 {
 	margin-bottom: .5em;
 }
