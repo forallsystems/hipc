@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Page of Events
+ * Template Name: Calendar of Events
  *
- * Selectable from a dropdown menu on the edit page screen.
+ * 
  */
 ?>
 
@@ -63,20 +63,45 @@ if( $my_query->have_posts() ) {
   </div>
 
   <div class="event-date-time">
-    <?php if ( ! empty($event_start_date_value)): ?>
+    <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
       <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
-      @
-    <?php endif; ?>
+        @
+        <?php echo $event_start_time_value; ?>
+        - 
+        <?php echo $event_end_time_value;
+      } ?>
+      
+      <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value) && empty($event_end_time_value)) { ?>
+        <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
+        @
+        <?php echo $event_start_time_value; 
+      } ?>
 
-    <?php if ( ! empty($event_start_time_value)): 
-      echo $event_start_time_value; ?>
-      -
-    <?php endif; ?> 
+      <?php if ( ! empty($event_start_date_value) && empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
+        <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
+        @
+        <?php echo $event_end_time_value; 
+      } ?>
 
-    <?php if ( ! empty($event_end_time_value)): 
-      echo $event_end_time_value; ?>
-      <br />
-    <?php endif; ?> 
+      <?php if ( empty($event_start_date_value) && ! empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
+        <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
+        <?php echo $event_start_time_value; ?>
+        - 
+        <?php echo $event_end_time_value;
+      } ?>
+
+      <?php if ( empty($event_start_date_value) && ! empty($event_start_time_value) && empty($event_end_time_value)) { ?>
+        <?php echo $event_start_time_value;
+      } ?>
+
+      <?php if ( empty($event_start_date_value) && empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
+        <?php echo $event_end_time_value;
+      } ?>
+
+      <?php if ( ! empty($event_start_date_value) && empty($event_start_time_value) && empty($event_end_time_value)) { ?>
+        <?php echo date_i18n( 'F j, Y', $event_start_date_value );
+      } ?>
+      
   </div>
 
   <div class="venue-address">
