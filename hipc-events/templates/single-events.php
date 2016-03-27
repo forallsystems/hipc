@@ -38,11 +38,11 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 <!--Display header with event date and time if available -->
 
   <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value)) { ?>
-    <h2 class="event-date-time-single-h"><?php echo $event_start_date_value; ?>
+    <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
     @ <?php echo $event_start_time_value; ?>
 
     <?php } elseif ( ! empty($event_start_date_value) && empty($event_start_time_value) ) { ?>
-     <h2 class="event-date-time-single-h"><?php echo $event_start_date_value; ?>
+     <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
     <?php } else { ?>
     <h2 class="event-date-time-single-h"><?php echo $event_start_time_value; } ?>
 
@@ -80,10 +80,10 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
       
       <?php if ( ! empty($event_start_date_value)): ?>
       <h5 class="event-detail-labels">Date:</h5>
-      <?php echo $event_start_date_value; ?>
+      <?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
       <?php endif; ?>
       <?php if ( ! empty($event_end_date_value)): ?> -
-      <?php echo $event_end_date_value; ?>
+      <?php echo date_i18n( 'F j, Y', $event_end_date_value ); ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_start_time_value)): ?>

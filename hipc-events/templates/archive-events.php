@@ -64,7 +64,7 @@ if( $my_query->have_posts() ) {
 
   <div class="event-date-time">
     <?php if ( ! empty($event_start_date_value)): ?>
-      <?php echo $event_start_date_value; ?>
+      <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
       @
     <?php endif; ?>
 

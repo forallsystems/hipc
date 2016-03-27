@@ -102,7 +102,7 @@ function event_meta_callback( $post ) {
 			<label for="event-start-date" class="event-row-title"><?php _e( 'Event Start Date', 'hipc-events' ); ?></label>
 		</div>
 		<div class="meta-td">
-			<input type="text" size=10 class="event-row-content datepicker" name="event_start_date" id="event-start-date" value="<?php if ( ! empty ( $event_stored_meta['event_start_date'] ) ) echo esc_attr( $event_stored_meta['event_start_date'][0] ); ?>"/>
+			<input type="text" size=10 class="event-row-content datepicker" name="event_start_date" id="event-start-date" value="<?php if ( ! empty ( $event_stored_meta['event_start_date'] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_start_date'][0] ); ?>"/>
 		</div>
 	</div>
 
@@ -111,7 +111,7 @@ function event_meta_callback( $post ) {
 				<label for="event_end_date" class="event-row-title"><?php _e( 'Event End Date', 'hipc-events' ) ?></label>
 			</div>
 			<div class="meta-td">
-				<input type="text" size=10 class="event-row-content datepicker" name="event_end_date" id="event_end_date" value="<?php if ( ! empty ( $event_stored_meta['event_end_date'] ) ) echo esc_attr( $event_stored_meta['event_end_date'][0] ); ?>"/>
+				<input type="text" size=10 class="event-row-content datepicker" name="event_end_date" id="event_end_date" value="<?php if ( ! empty ( $event_stored_meta['event_end_date'] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_end_date'][0] ); ?>"/>
 			</div>
 	</div>
 
@@ -301,6 +301,7 @@ function event_meta_callback( $post ) {
 	<?php	
 }
 
+
 function event_meta_save( $post_id ) {
 	// checks save status
 
@@ -314,11 +315,13 @@ function event_meta_save( $post_id ) {
 	}
 
 	if ( isset( $_POST['event_start_date'] ) ) {
-		update_post_meta( $post_id, 'event_start_date', sanitize_text_field($_POST[ 'event_start_date' ] ) );
+		$timestamp = strtotime($_POST['event_start_date']);
+		update_post_meta( $post_id, 'event_start_date', $timestamp );
 	}
 
 	if ( isset( $_POST['event_end_date'] ) ) {
-		update_post_meta( $post_id, 'event_end_date', sanitize_text_field($_POST[ 'event_end_date' ] ) );
+		$timestamp = strtotime($_POST['event_end_date']);
+		update_post_meta( $post_id, 'event_end_date', $timestamp );
 	}
 
 	if ( isset( $_POST['event_end_time'] ) ) {
