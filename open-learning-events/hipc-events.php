@@ -3,7 +3,7 @@
 	* Plugin Name: Open Learning Events
 	* Description: Simplifies how organizations publicize learning events and how learners find events.
 	* Version: 0.1
-	* Author: ForAllSystems
+	* Author: Forall Systems
 	* License: GPL2
 
 {Open Learning Events} is free software: you can redistribute it and/or modify
