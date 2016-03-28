@@ -42,7 +42,7 @@
       $event_categories_value7 = get_the_term_list( $post->ID, 'subject', '', ', ' ); 
       ?>
       <?php if ( ! empty($event_start_date_value)): 
-      echo $event_start_date_value; ?>
+      echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
       @
       <?php endif; ?>
 
