@@ -16,7 +16,7 @@ $args=array(
   'post_type' => $type,
   'post_status' => 'publish',
   'posts_per_page' => -1,
-  'caller_get_posts'=> 1,
+  'ignore_sticky_posts' => '1',
   'meta_key'        => 'event_start_date',
   'orderby'         => 'meta_value',
   'order'           => 'DSC'
@@ -141,6 +141,8 @@ if( $my_query->have_posts() ) {
       <div class="event-image">
       <?php the_post_thumbnail('medium'); ?></div>
     <?php endif; ?>
+
+    
 
     <?php if ( ! empty($event_description_value)): ?>
       <div class="event-description"><?php echo $event_description_value; ?>

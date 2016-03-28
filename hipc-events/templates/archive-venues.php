@@ -15,7 +15,7 @@ $args=array(
   'post_type' => $type,
   'post_status' => 'publish',
   'posts_per_page' => -1,
-  'caller_get_posts'=> 1
+  'ignore_sticky_posts' => '1'
 );
 
 $my_query = null;

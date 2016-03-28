@@ -94,7 +94,7 @@ function venue_meta_callback( $post ) {
 			</div>
 			<div class="meta-td">
 				<?php 
-				$selected = isset( $venue_stored_meta['venue_state'] ) ? esc_attr( $venue_stored_meta['venue_state'][0] ) : ”;?>
+				$selected = isset( $venue_stored_meta['venue_state'] ) ? esc_attr( $venue_stored_meta['venue_state'][0] ) : '';?>
 				<select id="venue-state" name="venue_state">
 					<option selected disabled>Choose a state</option>
 					<option value="AL"<?php selected( $selected, "AL" );?>>Alabama</option>
