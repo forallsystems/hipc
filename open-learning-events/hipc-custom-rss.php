@@ -31,9 +31,13 @@ function add_custom_fields_to_rss() {
 				} 
 			}
 
+		if ($value = get_post_meta($post_id, 'event_image', true)) {
+			echo"<event_image>{$value}</event_image>\n";
+		} else {
 			$image_id = get_post_thumbnail_id();
 			$image_url = wp_get_attachment_image_src($image_id,'large', true);
 			echo "<event_image>{$image_url[0]}</event_images>\n";
+		}
 			
 		}
 	if (get_post_type()=='venues') {

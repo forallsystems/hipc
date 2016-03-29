@@ -32,6 +32,7 @@
       $event_twitter_value = get_post_meta($post->ID, 'event_twitter', true); 
       $event_website_value = get_post_meta($post->ID, 'event_website', true);
       $event_categories_value = get_post_meta($post->ID, 'event_categories', true);
+      $event_image_value = get_post_meta($post->ID, 'event_image', true);
 
       $event_categories_value1 = get_the_term_list( $post->ID, 'connected_learning', '', ', ' );
       $event_categories_value2 = get_the_term_list( $post->ID, 'credentialing', '', ', ' ); 

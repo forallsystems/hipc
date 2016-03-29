@@ -4,6 +4,7 @@ h1 {
 	margin-bottom: .5em;
 }
 
+
 /*Calendar view*/
 .events-page-title {
 	text-align: center;
@@ -58,6 +59,11 @@ h1 {
 .event-image {
 	float:left; 
 	width:20%;
+}
+
+.event-image-url {
+	float:left;
+	width: 300px;
 }
 
 .event-description {

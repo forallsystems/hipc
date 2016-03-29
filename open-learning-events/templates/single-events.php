@@ -24,6 +24,7 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     $event_twitter_value = get_post_meta($post->ID, 'event_twitter', true); 
     $event_website_value = get_post_meta($post->ID, 'event_website', true);
     $event_categories_value = get_post_meta($post->ID, 'event_categories', true);
+    $event_image_value = get_post_meta($post->ID, 'event_image', true);
 
     $event_categories_value1 = get_the_term_list( $post->ID, 'connected_learning', '', ', ' );
     $event_categories_value2 = get_the_term_list( $post->ID, 'credentialing', '', ', ' ); 
@@ -60,10 +61,14 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
 <!--Display event image if available -->
 <div class="event-image-single">
-  <?php if (has_post_thumbnail($post->ID)): ?>
-    <?php the_post_thumbnail('medium'); ?>
-  <?php endif; ?>
-  </div>
+  <?php if (has_post_thumbnail($post->ID)){ ?>
+    <?php the_post_thumbnail('large'); ?></div>
+  <div class="event-image-single">
+  <?php } else {
+     if ( ! empty($event_image_value) ) : ?> 
+      <img src="<?php echo $event_image_value; ?>">
+    <?php endif; } ?>
+</div>
 
 <!--Display event description if available -->
 <div class="event-description-single">
