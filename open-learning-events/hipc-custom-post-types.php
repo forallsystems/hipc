@@ -86,6 +86,11 @@ function my_rewrite_flush() {
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
 
+function hipc_deactivate() {
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'hipc_deactivate' );
+
 /* Custom Taxonmies */
 
 function my_custom_taxonomies() {
