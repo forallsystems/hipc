@@ -9,7 +9,7 @@
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
 
-    <div class="post type-post hentry">
+    <div class="event-post">
       <h2 class="entry-title">
         <a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
           <?php the_title(); ?>
@@ -42,128 +42,191 @@
       $event_categories_value6 = get_the_term_list( $post->ID, 'payment', '', ', ' ); 
       $event_categories_value7 = get_the_term_list( $post->ID, 'subject', '', ', ' ); 
       ?>
-      <?php if ( ! empty($event_start_date_value)): 
-      echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
-      @
+ <div class="event-date-time-single">
+
+<!--Display header with event date and time if available -->
+
+  <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value)) { ?>
+    <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
+    @ <?php echo $event_start_time_value; ?>
+
+    <?php } elseif ( ! empty($event_start_date_value) && empty($event_start_time_value) ) { ?>
+     <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
+    <?php } else { ?>
+    <h2 class="event-date-time-single-h"><?php echo $event_start_time_value; } ?>
+
+    <?php if ( ! empty($event_end_time_value)): ?>
+       - 
+      <?php echo $event_end_time_value; ?></h2>
+    <?php endif; ?> 
+
+<!--Display cost with dividing line if available -->
+  <?php if ( ! empty($event_cost_value)): ?>
+    <span class="divider">|</span><span class="event-cost-single"><?php echo $event_cost_value; ?></span>
+  <?php endif; ?>
+  </div>
+
+
+<!--Display event image if available -->
+<div class="event-image-single">
+  <?php if (has_post_thumbnail($post->ID)){ ?>
+    <?php the_post_thumbnail('large'); ?></div>
+  <div class="event-image-single">
+  <?php } else {
+     if ( ! empty($event_image_value) ) : ?> 
+      <img src="<?php echo $event_image_value; ?>">
+    <?php endif; } ?>
+</div>
+
+<!--Display event description if available -->
+<div class="event-description-single">
+  <?php if ( ! empty($event_description_value)): 
+    echo $event_description_value; ?>
+  <?php endif; ?>
+</div>
+
+<!-- Three column event detail box -->
+<div class="event-details-box-single">
+
+  <div class="details-column">
+      <h3 class="event-detail-box-label" id="details-header">Details</h3>
+      
+      <?php if ( ! empty($event_start_date_value)): ?>
+      <h5 class="event-detail-labels">Date:</h5>
+      <?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
+      <?php endif; ?>
+      <?php if ( ! empty($event_end_date_value)): ?> -
+      <?php echo date_i18n( 'F j, Y', $event_end_date_value ); ?>
       <?php endif; ?>
 
-      <?php if ( ! empty($event_start_time_value)): 
-      echo $event_start_time_value; ?>
-      -
+      <?php if ( ! empty($event_start_time_value)): ?>
+      <h5 class="event-detail-labels" id="second-header">Time:</h5>
+      <?php echo $event_start_time_value; ?>
+      <?php endif; ?> 
+      <?php if ( ! empty($event_end_time_value)): ?> - 
+      <?php echo $event_end_time_value; ?></h2>
       <?php endif; ?> 
 
-      <?php if ( ! empty($event_end_time_value)): 
-      echo $event_end_time_value; ?>
-      <br />
-      <?php endif; ?> 
+<!--Display event categories if available -->
+    <?php  if ( ! empty ($event_categories_value) || ! empty ($event_categories_value2) ||
+    ! empty ($event_categories_value3) || ! empty ($event_categories_value4) ||
+    ! empty ($event_categories_value5) || ! empty ($event_categories_value6) ||
+    ! empty ($event_categories_value7) ) { ?>
 
-      <?php if ( ! empty($venue_name_value)): 
-      echo $venue_name_value; ?>,
-      <?php endif; ?> 
+      <h5 class="event-detail-labels" id="second-header">Event Categories:</h5>
+      <?php if ( ! empty($event_categories_value)): 
+        echo $event_categories_value; ?>,
+      <?php endif; ?>
 
-      <?php if ( ! empty($venue_street_address_value)) {
-      echo $venue_street_address_value; 
+      <?php if ( ! empty($event_categories_value1)): 
+        echo $event_categories_value1; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value2)): 
+        echo $event_categories_value2; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value3)): 
+        echo $event_categories_value3; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value4)): 
+        echo $event_categories_value4; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value5)): 
+        echo $event_categories_value5; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value6)): 
+        echo $event_categories_value6; ?>,
+      <?php endif; ?>
+
+      <?php if ( ! empty($event_categories_value7)): 
+        echo $event_categories_value7; ?>,
+      <?php endif; ?>
+      <?php } ?>
+
+     <!--Display event website if available and open in a new tab -->
+    <?php if ( ! empty($event_website_value)): ?>
+    <h5 class="event-detail-labels" id="second-header">Website:</h5>
+    <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_website_value; ?>" target="_blank">
+    <?php echo ($event_website_value) ; ?></a>
+    <?php endif; ?>
+</div>
+
+<div class="venue-column">
+  <h3 class="event-detail-box-label" id="venue-header">Venue</h3>
+
+  <!--Display venue details if available -->
+  <span class="venue-name"><?php if ( ! empty($venue_name_value)): ?>
+  <?php echo $venue_name_value; ?></span>, 
+  <?php endif; ?> 
+
+    <?php if ( ! empty($venue_street_address_value)) {
+    echo $venue_street_address_value; 
 
       if (! empty($venue_address_2_value)) {
         echo ' '; 
         echo $venue_address_2_value;
         echo '<br />';
-      }
-      else {
+      } else {
         echo '<br />';
       }
     } ?>
 
-      <?php if ( ! empty($venue_city_value)): 
+    <?php if ( ! empty($venue_city_value)): 
       echo $venue_city_value; ?>,
-      <?php endif; ?>
+    <?php endif; ?>
 
-      <?php if ( ! empty($venue_state_value)): 
+    <?php if ( ! empty($venue_state_value)): 
       echo $venue_state_value; ?>
-      <?php endif; ?>
+    <?php endif; ?>
 
-      <?php if ( ! empty($venue_zipcode_value)): 
+    <?php if ( ! empty($venue_zipcode_value)): 
       echo $venue_zipcode_value; ?>
-      <br />
-      <?php endif; ?>
+    <?php endif; ?>
 
-      <?php if (has_post_thumbnail($post->ID)): ?>
-        <p>
-          <?php the_post_thumbnail('medium'); ?>
-        </p>
-      <?php endif; ?>
+ <!--Display venue phone number if available -->
+  <?php if ( ! empty($venue_phone_value)): ?>
+  <h5 class="event-detail-labels" id="second-header">Phone:</h5>  
+  <?php echo $venue_phone_value; ?>
+  <?php endif; ?>
 
-      <?php if ( ! empty($event_description_value)): 
-      echo $event_description_value; ?>
-      <br />
-      <?php endif; ?>
+ <!--Display venue phone website if available -->
+  <?php if ( ! empty($venue_website_value)): ?>
+  <h5 class="event-detail-labels" id="second-header">Website:</h5>
+    <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo $venue_website_value; ?>" target="_blank">
+      <?php echo ($venue_website_value) ; ?></a>
+  <?php endif; ?>
+</div>
 
-      <?php if ( ! empty($event_notes_value)): 
-      echo $event_notes_value; ?>
-      <br />
-      <?php endif; ?>
+<div class="other-column">
+    <h3 class="event-detail-box-label" id="other-header">Other</h3>
+    
+     <!--Display organizer if available -->
+    <?php if ( ! empty($event_organizer_value)): ?>
+    <h5 class="event-detail-labels">Organizer:</h5>
+    <?php echo $event_organizer_value; ?>
+    <?php endif; ?>
 
-      <?php if ( ! empty($event_cost_value)): 
-      echo $event_cost_value; ?>
-      <br />
-      <?php endif; ?>
+     <!--Display event notes if available -->
+    <?php if ( ! empty($event_notes_value)): ?>
+    <h5 class="event-detail-labels" id="second-header">Notes:</h5>
+    <?php echo $event_notes_value; ?>
+    <?php endif; ?>
 
-      <?php if ( ! empty($event_organizer_value)): 
-      echo $event_organizer_value; ?>
-      <br />
-      <?php endif; ?>
+    <!--Display event twitter and open in new tab if available -->
+    <?php if ( ! empty($event_twitter_value)): ?>
+    <h5 class="event-detail-labels" id="second-header">Twitter:</h5>
+    <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_twitter_value; ?>" target="_blank">
+    <?php echo ($event_twitter_value) ; ?></a>
+    <?php endif; ?>
+  </div>
 
-      <?php if ( ! empty($event_twitter_value)): ?>
-      <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_twitter_value; ?>"><?php echo ($event_twitter_value) ; ?></a>
-        <br />
-      <?php endif; ?>
+  <div class="clear"></div>
 
-      <?php if ( ! empty($event_website_value)): ?>
-      <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_website_value; ?>"><?php echo ($event_website_value) ; ?></a>
-        <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value)): 
-      echo $event_categories_value; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value1)): 
-      echo $event_categories_value1; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value2)): 
-      echo $event_categories_value2; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value3)): 
-      echo $event_categories_value3; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value4)): 
-      echo $event_categories_value4; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value5)): 
-      echo $event_categories_value5; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value6)): 
-      echo $event_categories_value6; ?>
-      <br />
-      <?php endif; ?>
-
-      <?php if ( ! empty($event_categories_value7)): 
-      echo $event_categories_value7; ?>
-      <br />
-      <?php endif; ?>
-      <p></p>
-
+</div>
     </div><!-- .entry-summary -->
 </div>
 
