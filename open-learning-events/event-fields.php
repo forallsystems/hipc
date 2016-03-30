@@ -93,13 +93,14 @@ function event_meta_callback( $post ) {
 						update_post_meta( get_the_ID(), 'venue_zipcode', $event_zipcode);
 					} ?>
 			</div>
+			<a class="add-venue" href="<?php echo home_url('/wp-admin/post-new.php?post_type=venues') ?>"> + Add a new venue </a>
 		</div>
 	</div>
 
 
 	<div class="meta-row">
 		<div class="meta-th">
-			<label for="event-start-date" class="event-row-title"><?php _e( 'Event Start Date', 'hipc-events' ); ?></label>
+			<label for="event-start-date" class="event-row-title"><?php _e( 'Start Date', 'hipc-events' ); ?></label>
 		</div>
 		<div class="meta-td">
 			<input type="text" size=10 class="event-row-content datepicker" name="event_start_date" id="event-start-date" value="<?php if ( ! empty ( $event_stored_meta['event_start_date'][0] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_start_date'][0] ); ?>"/>
@@ -108,7 +109,7 @@ function event_meta_callback( $post ) {
 
 	<div class="meta-row">
 			<div class="meta-th">
-				<label for="event_end_date" class="event-row-title"><?php _e( 'Event End Date', 'hipc-events' ) ?></label>
+				<label for="event_end_date" class="event-row-title"><?php _e( 'End Date', 'hipc-events' ) ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" size=10 class="event-row-content datepicker" name="event_end_date" id="event_end_date" value="<?php if ( ! empty ( $event_stored_meta['event_end_date'][0] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_end_date'][0] ); ?>"/>
@@ -117,7 +118,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-start-time" class="event-row-title"><?php _e( 'Event Start Time', 'hipc-events' ); ?></label>
+				<label for="event-start-time" class="event-row-title"><?php _e( 'Start Time', 'hipc-events' ); ?></label>
 			</div>
 		<div class="time-hour">
 				<?php $event_start_time = '';?>
@@ -168,7 +169,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-end-time" class="event-row-title"><?php _e( 'Event End Time', 'hipc-events' ); ?></label>
+				<label for="event-end-time" class="event-row-title"><?php _e( 'End Time', 'hipc-events' ); ?></label>
 			</div>
 		<div class="time-hour">
 				<?php $event_start_time = '';?>
@@ -220,7 +221,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 	        <div class="meta-th">
-	          <label for="event-description" class="event-row-title"><?php _e( 'Event Description', 'hipc-events' ) ?></label>
+	          <label for="event-description" class="event-row-title"><?php _e( 'Description', 'hipc-events' ) ?></label>
 	        </div>
 	        <div class="meta-td">
 	          <textarea name="event_description" class="event-textarea" id="event-description"><?php
@@ -233,7 +234,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-cost" class="event-row-title"><?php _e( 'Event Cost', 'hipc-events' ); ?></label>
+				<label for="event-cost" class="event-row-title"><?php _e( 'Cost', 'hipc-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_cost" id="event-cost" 
@@ -246,7 +247,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-website" class="event-row-title"><?php _e( 'Event Website', 'hipc-events' ); ?></label>
+				<label for="event-website" class="event-row-title"><?php _e( 'Website', 'hipc-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_website" id="event-website" 
@@ -260,7 +261,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-organizer" class="event-row-title"><?php _e( 'Event Organizer', 'hipc-events' ); ?></label>
+				<label for="event-organizer" class="event-row-title"><?php _e( 'Organizer', 'hipc-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_organizer" id="event-organizer" 
@@ -274,7 +275,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-twitter" class="event-row-title"><?php _e( 'Event Twitter', 'hipc-events' ); ?></label>
+				<label for="event-twitter" class="event-row-title"><?php _e( 'Twitter', 'hipc-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_twitter" id="event-twitter" 
@@ -288,7 +289,7 @@ function event_meta_callback( $post ) {
 
 		<div class="meta-row">
 	        <div class="meta-th">
-	          <label for="event-notes" class="event-row-title"><?php _e( 'Event Notes', 'hipc-events' ) ?></label>
+	          <label for="event-notes" class="event-row-title"><?php _e( 'Notes', 'hipc-events' ) ?></label>
 	        </div>
 	        <div class="meta-td">
 	          <textarea name="event_notes" class="event-textarea" id="event-notes"><?php

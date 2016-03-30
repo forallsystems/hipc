@@ -19,23 +19,34 @@
 .meta-th {
 	display: inline-block;
 	float: left;
-	width: 25%;
+	width: 100%;
 	font-weight: bold;
+	padding-bottom: 10px;
 }
 .meta-tr {
 	display: inline-block;
 	float: right;
-	width: 75%;
+	width: 100%;
 }
 .meta {
 	margin-top: 20px;
 }
+
+input[type=text] {
+	width: 100%;
+}
+
 .event-textarea {
 	height: 100px;
-	width: 75%;
+	width: 100%;
 }
 
 .venue-textarea {
 	height: 100px;
-	width: 75%;
+	width: 100%;
+}
+
+#edit-slug-box {
+ 	min-height: 0px;
+    margin-top: 0px;
 }
