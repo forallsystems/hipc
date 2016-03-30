@@ -3,7 +3,7 @@
 <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 <div id="container">
   <div id="content" role="main">
-
+  <a href="<?php echo home_url('index.php/events') ?>"> << All Events </a>
     <h1 class="page-title"><?php echo $term->name; ?> Archives</h1>
 
     <?php if (have_posts()) : ?>
@@ -114,39 +114,44 @@
     ! empty ($event_categories_value7) ) { ?>
 
       <h5 class="event-detail-labels" id="second-header">Event Categories:</h5>
+      <?php $event_cat_display = ""; ?>
       <?php if ( ! empty($event_categories_value)): 
-        echo $event_categories_value; ?>,
+        $event_cat_display .= $event_categories_value . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value1)): 
-        echo $event_categories_value1; ?>,
+        $event_cat_display .= $event_categories_value1 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value2)): 
-        echo $event_categories_value2; ?>,
+        $event_cat_display .= $event_categories_value2 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value3)): 
-        echo $event_categories_value3; ?>,
+        $event_cat_display .= $event_categories_value3 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value4)): 
-        echo $event_categories_value4; ?>,
+        $event_cat_display .= $event_categories_value4 . ', ';?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value5)): 
-        echo $event_categories_value5; ?>,
+        $event_cat_display .= $event_categories_value5 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value6)): 
-        echo $event_categories_value6; ?>,
+       $event_cat_display .= $event_categories_value6 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value7)): 
-        echo $event_categories_value7; ?>,
+        $event_cat_display .= $event_categories_value7 . ', '; ?>
       <?php endif; ?>
-      <?php } ?>
 
+      <?php if ( ! empty( $event_cat_display )): ?>
+        <?php echo substr($event_cat_display, 0, -2); ?>
+      <?php endif; ?> 
+
+      <?php } ?>
      <!--Display event website if available and open in a new tab -->
     <?php if ( ! empty($event_website_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Website:</h5>

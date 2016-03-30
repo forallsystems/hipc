@@ -106,37 +106,43 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     ! empty ($event_categories_value7) ) { ?>
 
       <h5 class="event-detail-labels" id="second-header">Event Categories:</h5>
+      <?php $event_cat_display = ""; ?>
       <?php if ( ! empty($event_categories_value)): 
-        echo $event_categories_value; ?>,
+        $event_cat_display .= $event_categories_value . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value1)): 
-        echo $event_categories_value1; ?>,
+        $event_cat_display .= $event_categories_value1 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value2)): 
-        echo $event_categories_value2; ?>,
+        $event_cat_display .= $event_categories_value2 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value3)): 
-        echo $event_categories_value3; ?>,
+        $event_cat_display .= $event_categories_value3 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value4)): 
-        echo $event_categories_value4; ?>,
+        $event_cat_display .= $event_categories_value4 . ', ';?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value5)): 
-        echo $event_categories_value5; ?>,
+        $event_cat_display .= $event_categories_value5 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value6)): 
-        echo $event_categories_value6; ?>,
+       $event_cat_display .= $event_categories_value6 . ', '; ?>
       <?php endif; ?>
 
       <?php if ( ! empty($event_categories_value7)): 
-        echo $event_categories_value7; ?>,
+        $event_cat_display .= $event_categories_value7 . ', '; ?>
       <?php endif; ?>
+
+      <?php if ( ! empty( $event_cat_display )): ?>
+        <?php echo substr($event_cat_display, 0, -2); ?>
+      <?php endif; ?> 
+
       <?php } ?>
 
      <!--Display event website if available and open in a new tab -->
