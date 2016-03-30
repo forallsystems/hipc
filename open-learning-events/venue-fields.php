@@ -34,20 +34,6 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-name" class="venue-row-title"><?php _e( 'Venue Name', 'hipc-events' ); ?></label>
-			</div>
-			<div class="meta-td">
-				<input type="text" name="venue_name" id="venue-name" 
-				value="<?php if ( ! empty ($venue_stored_meta['venue_name'] ) ) {
-					echo esc_attr( $venue_stored_meta['venue_name'][0] ); 
-				} ?>"/>
-			</div>
-		</div>
-	</div>
-
-	<div>
-		<div class="meta-row">
-			<div class="meta-th">
 				<label for="venue-street-address" class="venue-row-title"><?php _e( 'Venue Street Address', 'hipc-events' ); ?></label>
 			</div>
 			<div class="meta-td">
@@ -211,8 +197,8 @@ function venue_meta_save( $post_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['venue_name'] ) ) {
-		update_post_meta( $post_id, 'venue_name', sanitize_text_field($_POST[ 'venue_name' ] ) );
+	if ( isset( $_POST['post_title'] ) ) {
+		update_post_meta( $post_id, 'venue_name', sanitize_text_field($_POST[ 'post_title' ] ) );
 	}
 
 	if ( isset( $_POST['venue_street_address'] ) ) {
