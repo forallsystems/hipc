@@ -218,7 +218,7 @@
      <!--Display event notes if available -->
     <?php if ( ! empty($event_notes_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Notes:</h5>
-    <?php echo esc_textarea($event_notes_value_; ?>
+    <?php echo esc_textarea($event_notes_value_); ?>
     <?php endif; ?>
 
     <!--Display event twitter and open in new tab if available -->
