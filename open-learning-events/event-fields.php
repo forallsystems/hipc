@@ -252,7 +252,7 @@ function ole_event_meta_callback( $post ) {
 			<div class="meta-td">
 				<input type="text" name="event_website" id="event-website" 
 				value="<?php if ( ! empty ($event_stored_meta['event_website'] ) ) {
-					echo esc_url_raw( $event_stored_meta['event_website'][0] ); 
+					echo esc_url( $event_stored_meta['event_website'][0] ); 
 				} ?>"/>
 			</div>
 		</div>
@@ -280,7 +280,7 @@ function ole_event_meta_callback( $post ) {
 			<div class="meta-td">
 				<input type="text" name="event_twitter" id="event-twitter" 
 				value="<?php if ( ! empty ($event_stored_meta['event_twitter'] ) ) {
-					echo esc_url_raw( $event_stored_meta['event_twitter'][0] ); 
+					echo esc_url( $event_stored_meta['event_twitter'][0] ); 
 				} ?>"/>
 			</div>
 		</div>
