@@ -35,3 +35,5 @@ This plugin is optimized for use with [Sela](https://wordpress.org/themes/sela/)
 == Documentation ==
 
 See our GitHub Wiki for more information and documentation: [https://github.com/forallsystems/hipc/wiki](https://github.com/forallsystems/hipc/wiki)
+
+[How to use](https://docs.google.com/document/d/1BGNBZwV7-bVeGv4sO9skvzjL9jv-oqzQLOiNadq_ddA/edit?usp=sharing)
