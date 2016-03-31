@@ -148,7 +148,7 @@
       <?php endif; ?>
 
       <?php if ( ! empty( $event_cat_display )): ?>
-        <?php echo esc_attr(substr($event_cat_display, 0, -2)); ?>
+        <?php echo substr($event_cat_display, 0, -2); ?>
       <?php endif; ?> 
 
       <?php } ?>
