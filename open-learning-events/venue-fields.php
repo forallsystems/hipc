@@ -175,7 +175,7 @@ function ole_venue_meta_callback( $post ) {
 			<div class="meta-td">
 				<input type="text" name="venue_website" id="venue-website" 
 				value="<?php if ( ! empty ($venue_stored_meta['venue_website'] ) ) {
-					echo esc_attr( $venue_stored_meta['venue_website'][0] ); 
+					echo esc_url( $venue_stored_meta['venue_website'][0] ); 
 				} ?>"/>
 			</div>
 		</div>
@@ -226,7 +226,7 @@ function ole_venue_meta_save( $post_id ) {
 	}
 
 	if ( isset( $_POST['venue_website'] ) ) {
-	update_post_meta( $post_id, 'venue_website', sanitize_text_field($_POST[ 'venue_website' ] ) );
+	update_post_meta( $post_id, 'venue_website', esc_url_raw($_POST[ 'venue_website' ] ) );
 	}
 
 }

@@ -48,7 +48,7 @@
 
   <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value)) { ?>
     <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
-    @ <?php echo $event_start_time_value; ?>
+    @ <?php echo esc_attr($event_start_time_value); ?>
 
     <?php } elseif ( ! empty($event_start_date_value) && empty($event_start_time_value) ) { ?>
      <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
@@ -57,7 +57,7 @@
 
     <?php if ( ! empty($event_end_time_value)): ?>
        - 
-      <?php echo $event_end_time_value; ?></h2>
+      <?php echo esc_attr($event_end_time_value); ?></h2>
     <?php endif; ?> 
 
 <!--Display cost with dividing line if available -->
@@ -74,7 +74,7 @@
   <div class="event-image-single">
   <?php } else {
      if ( ! empty($event_image_value) ) : ?> 
-      <img src="<?php echo $event_image_value; ?>">
+      <img src="<?php echo esc_url($event_image_value); ?>">
     <?php endif; } ?>
 </div>
 
@@ -101,10 +101,10 @@
 
       <?php if ( ! empty($event_start_time_value)): ?>
       <h5 class="event-detail-labels" id="second-header">Time:</h5>
-      <?php echo $event_start_time_value; ?>
+      <?php echo esc_attr($event_start_time_value); ?>
       <?php endif; ?> 
       <?php if ( ! empty($event_end_time_value)): ?> - 
-      <?php echo $event_end_time_value; ?></h2>
+      <?php echo esc_attr($event_end_time_value); ?></h2>
       <?php endif; ?> 
 
 <!--Display event categories if available -->
@@ -148,7 +148,7 @@
       <?php endif; ?>
 
       <?php if ( ! empty( $event_cat_display )): ?>
-        <?php echo substr($event_cat_display, 0, -2); ?>
+        <?php echo esc_attr(substr($event_cat_display, 0, -2)); ?>
       <?php endif; ?> 
 
       <?php } ?>
@@ -165,7 +165,7 @@
 
   <!--Display venue details if available -->
   <span class="venue-name"><?php if ( ! empty($venue_name_value)): ?>
-  <?php echo $venue_name_value; ?></span>, 
+  <?php echo esc_attr($venue_name_value); ?></span>, 
   <?php endif; ?> 
 
     <?php if ( ! empty($venue_street_address_value)) {

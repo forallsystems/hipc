@@ -67,7 +67,7 @@ function ole_event_meta_callback( $post ) {
 						<option selected disabled>Choose from your saved venues</option>
 						<?php foreach ( $venues as $venue ) : ?>
 
-						<option value="<?php echo $venue->ID; ?>"<?php selected ($selected, $venue->ID); ?>><?php echo $venue->venue_name; ?></option>
+						<option value="<?php echo esc_attr($venue->ID); ?>"<?php selected ($selected, $venue->ID); ?>><?php echo esc_attr($venue->venue_name); ?></option>
 						<?php if (selected($selected, $venue->ID) !== '' ) {
 								$selectedVenueID = $venue->ID;
 							}

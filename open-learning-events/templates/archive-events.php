@@ -67,36 +67,36 @@ if( $my_query->have_posts() ) {
     <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
       <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
         @
-        <?php echo $event_start_time_value; ?>
+        <?php echo esc_attr($event_start_time_value); ?>
         - 
-        <?php echo $event_end_time_value;
+        <?php echo esc_attr($event_end_time_value);
       } ?>
       
       <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value) && empty($event_end_time_value)) { ?>
         <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
         @
-        <?php echo $event_start_time_value; 
+        <?php echo esc_attr($event_start_time_value); 
       } ?>
 
       <?php if ( ! empty($event_start_date_value) && empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
         <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
         @
-        <?php echo $event_end_time_value; 
+        <?php echo esc_attr($event_end_time_value); 
       } ?>
 
       <?php if ( empty($event_start_date_value) && ! empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
         <?php echo date_i18n( 'F j, Y', $event_start_date_value );?>
-        <?php echo $event_start_time_value; ?>
+        <?php echo esc_attr($event_start_time_value); ?>
         - 
-        <?php echo $event_end_time_value;
+        <?php echo esc_attr($event_end_time_value);
       } ?>
 
       <?php if ( empty($event_start_date_value) && ! empty($event_start_time_value) && empty($event_end_time_value)) { ?>
-        <?php echo $event_start_time_value;
+        <?php echo esc_attr($event_start_time_value);
       } ?>
 
       <?php if ( empty($event_start_date_value) && empty($event_start_time_value) && ! empty($event_end_time_value)) { ?>
-        <?php echo $event_end_time_value;
+        <?php echo esc_attr($event_end_time_value);
       } ?>
 
       <?php if ( ! empty($event_start_date_value) && empty($event_start_time_value) && empty($event_end_time_value)) { ?>
@@ -107,7 +107,7 @@ if( $my_query->have_posts() ) {
 
   <div class="venue-address">
     <?php if ( ! empty($venue_name_value)): ?>
-      <span class="venue-name"><?php echo $venue_name_value; ?></span>,
+      <span class="venue-name"><?php echo esc_attr($venue_name_value); ?></span>,
     <?php endif; ?>
 
     <?php if ( ! empty($venue_street_address_value)) {
@@ -129,7 +129,7 @@ if( $my_query->have_posts() ) {
     <?php endif; ?>
 
     <?php if ( ! empty($venue_state_value)): 
-      echo $venue_state_value; ?>
+      echo esc_attr($venue_state_value); ?>
     <?php endif; ?>
 
     <?php if ( ! empty($venue_zipcode_value)): 
@@ -144,7 +144,7 @@ if( $my_query->have_posts() ) {
       <?php } else {
           if ( ! empty($event_image_value) ) : ?> 
           <div class="event-image-url">   
-          <img src="<?php echo $event_image_value; ?>"></div>
+          <img src="<?php echo esc_url($event_image_value); ?>"></div>
     <?php endif; } ?>
 
     <?php if ( ! empty($event_description_value)): ?>

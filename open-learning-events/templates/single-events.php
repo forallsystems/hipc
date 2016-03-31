@@ -40,7 +40,7 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
   <?php if ( ! empty($event_start_date_value) && ! empty($event_start_time_value)) { ?>
     <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
-    @ <?php echo $event_start_time_value; ?>
+    @ <?php echo esc_attr($event_start_time_value); ?>
 
     <?php } elseif ( ! empty($event_start_date_value) && empty($event_start_time_value) ) { ?>
      <h2 class="event-date-time-single-h"><?php echo date_i18n( 'F j, Y', $event_start_date_value ); ?>
@@ -49,12 +49,12 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
     <?php if ( ! empty($event_end_time_value)): ?>
        - 
-      <?php echo $event_end_time_value; ?></h2>
+      <?php echo esc_attr($event_end_time_value); ?></h2>
     <?php endif; ?> 
 
 <!--Display cost with dividing line if available -->
   <?php if ( ! empty($event_cost_value)): ?>
-    <span class="divider">|</span><span class="event-cost-single"><?php echo $event_cost_value; ?></span>
+    <span class="divider">|</span><span class="event-cost-single"><?php echo esc_attr($event_cost_value); ?></span>
   <?php endif; ?>
   </div>
 
@@ -66,14 +66,14 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
   <div class="event-image-single">
   <?php } else {
      if ( ! empty($event_image_value) ) : ?> 
-      <img src="<?php echo $event_image_value; ?>">
+      <img src="<?php echo esc_url($event_image_value); ?>">
     <?php endif; } ?>
 </div>
 
 <!--Display event description if available -->
 <div class="event-description-single">
   <?php if ( ! empty($event_description_value)): 
-    echo $event_description_value; ?>
+    echo esc_attr($event_description_value); ?>
   <?php endif; ?>
 </div>
 
@@ -93,10 +93,10 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
       <?php if ( ! empty($event_start_time_value)): ?>
       <h5 class="event-detail-labels" id="second-header">Time:</h5>
-      <?php echo $event_start_time_value; ?>
+      <?php echo esc_attr($event_start_time_value); ?>
       <?php endif; ?> 
       <?php if ( ! empty($event_end_time_value)): ?> - 
-      <?php echo $event_end_time_value; ?></h2>
+      <?php echo esc_attr($event_end_time_value); ?></h2>
       <?php endif; ?> 
 
 <!--Display event categories if available -->
@@ -140,7 +140,7 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
       <?php endif; ?>
 
       <?php if ( ! empty( $event_cat_display )): ?>
-        <?php echo substr($event_cat_display, 0, -2); ?>
+        <?php echo esc_attr(substr($event_cat_display, 0, -2)); ?>
       <?php endif; ?> 
 
       <?php } ?>
@@ -158,15 +158,15 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
 
   <!--Display venue details if available -->
   <span class="venue-name"><?php if ( ! empty($venue_name_value)): ?>
-  <?php echo $venue_name_value; ?></span>, 
+  <?php echo esc_attr($venue_name_value); ?></span>, 
   <?php endif; ?> 
 
     <?php if ( ! empty($venue_street_address_value)) {
-    echo $venue_street_address_value; 
+    echo esc_attr($venue_street_address_value); 
 
       if (! empty($venue_address_2_value)) {
         echo ' '; 
-        echo $venue_address_2_value;
+        echo esc_attr($venue_address_2_value);
         echo '<br />';
       } else {
         echo '<br />';
@@ -174,21 +174,21 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
     } ?>
 
     <?php if ( ! empty($venue_city_value)): 
-      echo $venue_city_value; ?>,
+      echo esc_attr($venue_city_value); ?>,
     <?php endif; ?>
 
     <?php if ( ! empty($venue_state_value)): 
-      echo $venue_state_value; ?>
+      echo esc_attr($venue_state_value); ?>
     <?php endif; ?>
 
     <?php if ( ! empty($venue_zipcode_value)): 
-      echo $venue_zipcode_value; ?>
+      echo esc_attr($venue_zipcode_value); ?>
     <?php endif; ?>
 
  <!--Display venue phone number if available -->
   <?php if ( ! empty($venue_phone_value)): ?>
   <h5 class="event-detail-labels" id="second-header">Phone:</h5>  
-  <?php echo $venue_phone_value; ?>
+  <?php echo esc_attr($venue_phone_value); ?>
   <?php endif; ?>
 
  <!--Display venue phone website if available -->
@@ -205,13 +205,13 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
      <!--Display organizer if available -->
     <?php if ( ! empty($event_organizer_value)): ?>
     <h5 class="event-detail-labels">Organizer:</h5>
-    <?php echo $event_organizer_value; ?>
+    <?php echo esc_attr($event_organizer_value); ?>
     <?php endif; ?>
 
      <!--Display event notes if available -->
     <?php if ( ! empty($event_notes_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Notes:</h5>
-    <?php echo $event_notes_value; ?>
+    <?php echo esc_attr($event_notes_value); ?>
     <?php endif; ?>
 
     <!--Display event twitter and open in new tab if available -->

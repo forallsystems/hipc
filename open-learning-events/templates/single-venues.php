@@ -18,7 +18,7 @@ $venue_fetch_meta = get_post_meta( get_the_ID() ); ?>
   ?>
   
   <?php if ( ! empty($venue_name_value)): 
-    echo $venue_name_value; ?>,
+    echo esc_attr($venue_name_value); ?>,
   <?php endif; ?> 
 
   <?php if ( ! empty($venue_street_address_value)) {
