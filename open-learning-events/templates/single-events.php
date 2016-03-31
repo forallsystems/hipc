@@ -100,10 +100,10 @@ $event_fetch_meta = get_post_meta( get_the_ID() ); ?>
       <?php endif; ?> 
 
 <!--Display event categories if available -->
-    <?php  if ( ! empty ($event_categories_value) || ! empty ($event_categories_value2) ||
-    ! empty ($event_categories_value3) || ! empty ($event_categories_value4) ||
-    ! empty ($event_categories_value5) || ! empty ($event_categories_value6) ||
-    ! empty ($event_categories_value7) ) { ?>
+    <?php  if ( ! empty ($event_categories_value) || ! empty ($event_categories_value1) || 
+    ! empty ($event_categories_value2) || ! empty ($event_categories_value3) || 
+    ! empty ($event_categories_value4) || ! empty ($event_categories_value5) || 
+    ! empty ($event_categories_value6) || ! empty ($event_categories_value7) ) { ?>
 
       <h5 class="event-detail-labels" id="second-header">Event Categories:</h5>
       <?php $event_cat_display = ""; ?>

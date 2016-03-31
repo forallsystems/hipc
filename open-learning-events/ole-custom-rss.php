@@ -1,5 +1,5 @@
 <?php
-function add_custom_fields_to_rss() {
+function ole_add_custom_fields_to_rss() {
 	if (get_post_type()=='events') {
 
 		$fields = array( 'event_start_time', 'event_end_time', 'event_description', 'event_notes', 'event_cost', 'event_organizer', 'event_twitter', 'event_website', 'venue_name', 'venue_street_address', 'venue_address_2', 'venue_city', 'venue_state', 'venue_zipcode', 'venue_phone', 'venue_website');
@@ -48,4 +48,4 @@ function add_custom_fields_to_rss() {
 				echo "<{$field}>{$value}</{$field}>\n";
 		}
 	}
-	add_action('rss2_item', 'add_custom_fields_to_rss');
+	add_action('rss2_item', 'ole_add_custom_fields_to_rss');

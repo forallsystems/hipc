@@ -56,7 +56,7 @@ if( $my_query->have_posts() ) {
 <div class="event-post">
 
   <div class="event-title">
-     <p><a class="hipc-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a></h1>
+     <p><a class="ole-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a></h1>
       <?php if ( ! empty($event_cost_value)): ?>
       <span class="event-cost"><?php echo $event_cost_value; ?>
       <br />

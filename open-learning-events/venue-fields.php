@@ -1,19 +1,19 @@
 <?php
-function venue_add_custom_metabox() {
+function ole_venue_add_custom_metabox() {
 
 	add_meta_box(
 		'venue_meta',
 		__( 'Venue Listing' ),
-		'venue_meta_callback',
+		'ole_venue_meta_callback',
 		'venues',
 		'normal',
 		'core'
 		);
 }
 
-add_action(  'add_meta_boxes', 'venue_add_custom_metabox' );
+add_action(  'add_meta_boxes', 'ole_venue_add_custom_metabox' );
 
-function change_title_text_venue ( $title ) {
+function ole_change_title_text_venue ( $title ) {
 	$screen = get_current_screen();
 
 	if ( 'venues' == $screen->post_type ) {
@@ -23,9 +23,9 @@ function change_title_text_venue ( $title ) {
 	return $title;
 }
 
-add_filter ('enter_title_here', 'change_title_text_venue');
+add_filter ('enter_title_here', 'ole_change_title_text_venue');
 
-function venue_meta_callback( $post ) {
+function ole_venue_meta_callback( $post ) {
 	//number used once - validate data actually came from the form you made
 
 	wp_nonce_field( basename(__FILE__), 'venues_nonce');
@@ -34,7 +34,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-street-address" class="venue-row-title"><?php _e( 'Venue Street Address', 'hipc-events' ); ?></label>
+				<label for="venue-street-address" class="venue-row-title"><?php _e( 'Venue Street Address', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_street_address" id="venue-street-address" 
@@ -48,7 +48,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-address-2" class="venue-row-title"><?php _e( 'Venue Address 2', 'hipc-events' ); ?></label>
+				<label for="venue-address-2" class="venue-row-title"><?php _e( 'Venue Address 2', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_address_2" id="venue-address-2" 
@@ -62,7 +62,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-city" class="venue-row-title"><?php _e( 'Venue City', 'hipc-events' ); ?></label>
+				<label for="venue-city" class="venue-row-title"><?php _e( 'Venue City', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_city" id="venue-city" 
@@ -76,7 +76,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-state" class="venue-row-title"><?php _e( 'Venue State', 'hipc-events' ); ?></label>
+				<label for="venue-state" class="venue-row-title"><?php _e( 'Venue State', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<?php 
@@ -142,7 +142,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-zipcode" class="venue-row-title"><?php _e( 'Venue Zipcode', 'hipc-events' ); ?></label>
+				<label for="venue-zipcode" class="venue-row-title"><?php _e( 'Venue Zipcode', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_zipcode" id="venue-zipcode" 
@@ -156,7 +156,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-phone" class="venue-row-title"><?php _e( 'Venue Phone Number', 'hipc-events' ); ?></label>
+				<label for="venue-phone" class="venue-row-title"><?php _e( 'Venue Phone Number', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_phone" id="venue-phone" 
@@ -170,7 +170,7 @@ function venue_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="venue-website" class="venue-row-title"><?php _e( 'Venue Website', 'hipc-events' ); ?></label>
+				<label for="venue-website" class="venue-row-title"><?php _e( 'Venue Website', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="venue_website" id="venue-website" 
@@ -186,7 +186,7 @@ function venue_meta_callback( $post ) {
 	<?php	
 }
 
-function venue_meta_save( $post_id ) {
+function ole_venue_meta_save( $post_id ) {
 	// checks save status
 
 	$is_autosave = wp_is_post_autosave( $post_id);
@@ -230,4 +230,4 @@ function venue_meta_save( $post_id ) {
 	}
 
 }
-add_action ('save_post', 'venue_meta_save');
+add_action ('save_post', 'ole_venue_meta_save');

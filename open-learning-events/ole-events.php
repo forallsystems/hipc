@@ -25,14 +25,14 @@ if ( ! defined( 'ABSPATH')) {
 	exit;
 }
 
-require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-post-types.php' );
+require_once ( plugin_dir_path(__FILE__) . 'ole-custom-post-types.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-fields.php' );
 require_once ( plugin_dir_path(__FILE__) . 'venue-fields.php' );
-require_once ( plugin_dir_path(__FILE__) . 'hipc-custom-rss.php' );
+require_once ( plugin_dir_path(__FILE__) . 'ole-custom-rss.php' );
 require_once ( plugin_dir_path(__FILE__) . 'event-template-load.php' );
-require_once ( plugin_dir_path(__FILE__) . 'hipc-menus.php' );
+require_once ( plugin_dir_path(__FILE__) . 'ole-menus.php' );
 
-function event_admin_enqueue_scripts() {
+function ole_event_admin_enqueue_scripts() {
 	global $pagenow, $typenow;
 
 	if ( $typenow == 'events' ) {
@@ -50,9 +50,9 @@ function event_admin_enqueue_scripts() {
 	}
 
 }
-add_action( 'admin_enqueue_scripts', 'event_admin_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'ole_event_admin_enqueue_scripts' );
 
-function hipc_enqueue_style() {
-    wp_enqueue_style( 'hipc-style-css', plugins_url( 'css/hipc-style.css', __FILE__ ) );
+function ole_enqueue_style() {
+    wp_enqueue_style( 'ole-style-css', plugins_url( 'css/ole-style.css', __FILE__ ) );
 }
-add_action( 'wp_enqueue_scripts', 'hipc_enqueue_style', 9999 );
+add_action( 'wp_enqueue_scripts', 'ole_enqueue_style', 9999 );

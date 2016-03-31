@@ -3,8 +3,8 @@ register_nav_menus( array(
     'primary' => 'Primary',
 ) );
 
-add_action('load-nav-menus.php', 'auto_nav_creation_primary');
-function auto_nav_creation_primary(){
+add_action('load-nav-menus.php', 'ole_auto_nav_creation_primary');
+function ole_auto_nav_creation_primary(){
     $name = 'Navigation';
     $menu_exists = wp_get_nav_menu_object($name);
     if( !$menu_exists){

@@ -1,5 +1,5 @@
 <?php 
-function my_custom_posttypes() {
+function ole_custom_posttypes() {
 	//Events Post Type
 	 $labels = array(
         'name'               => 'Events',
@@ -71,29 +71,29 @@ function my_custom_posttypes() {
 	register_post_type( 'venues', $args );
 }
 
-add_action( 'init', 'my_custom_posttypes');
+add_action( 'init', 'ole_custom_posttypes');
 
-function my_rewrite_flush() {
+function ole_rewrite_flush() {
     // First, we "add" the custom post type via the above written function.
     // Note: "add" is written with quotes, as CPTs don't get added to the DB,
     // They are only referenced in the post_type column with a post entry, 
     // when you add a post of this CPT.
-    my_custom_posttypes();
+    ole_custom_posttypes();
 
     // ATTENTION: This is *only* done during plugin activation hook in this example!
     // You should *NEVER EVER* do this on every page load!!
     flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, 'my_rewrite_flush' );
+register_activation_hook( __FILE__, 'ole_rewrite_flush' );
 
-function hipc_deactivate() {
+function ole_deactivate() {
     flush_rewrite_rules();
 }
-register_deactivation_hook( __FILE__, 'hipc_deactivate' );
+register_deactivation_hook( __FILE__, 'ole_deactivate' );
 
 /* Custom Taxonmies */
 
-function my_custom_taxonomies() {
+function ole_custom_taxonomies() {
     /*Connected Learning Taxonomy*/
     $labels = array(
         'name'                       => 'Connected Learning',
@@ -347,4 +347,4 @@ function my_custom_taxonomies() {
     wp_insert_term( 'Web Literacy', 'subject' );
 }
 
-add_action( 'init', 'my_custom_taxonomies');
+add_action( 'init', 'ole_custom_taxonomies');

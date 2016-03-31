@@ -1,33 +1,33 @@
 <?php
 
-function event_add_custom_metabox() {
+function ole_event_add_custom_metabox() {
 
 	add_meta_box(
 			'event_meta',
 			__( 'Event Details' ),
-			'event_meta_callback',
+			'ole_event_meta_callback',
 			'events',
 			'normal',
 			'core'
 		);
 }
 
-add_action(  'add_meta_boxes', 'event_add_custom_metabox');
+add_action(  'add_meta_boxes', 'ole_event_add_custom_metabox');
 
-add_action('do_meta_boxes', 'change_image_box');
-function change_image_box()
+add_action('do_meta_boxes', 'ole_change_image_box');
+function ole_change_image_box()
 {
     remove_meta_box( 'postimagediv', 'custom_post_type', 'side' );
     add_meta_box('postimagediv', __('Event Image'), 'post_thumbnail_meta_box', 'events', 'side', 'high');
 }
 
-function change_featured_image_text( $content ) {
+function ole_change_featured_image_text( $content ) {
     return $content = str_replace( __( 'Set featured image' ), __( 'Set Event Image' ), $content);
 }
 
-add_filter( 'admin_post_thumbnail_html', 'change_featured_image_text' );
+add_filter( 'admin_post_thumbnail_html', 'ole_change_featured_image_text' );
 
-function change_title_text ( $title ) {
+function ole_change_title_text ( $title ) {
 	$screen = get_current_screen();
 
 	if ( 'events' == $screen->post_type ) {
@@ -37,9 +37,9 @@ function change_title_text ( $title ) {
 	return $title;
 }
 
-add_filter ('enter_title_here', 'change_title_text');
+add_filter ('enter_title_here', 'ole_change_title_text');
 
-function event_meta_callback( $post ) {
+function ole_event_meta_callback( $post ) {
 	//number used once - validate data actually came from the form you made
 
 	wp_nonce_field( basename(__FILE__), 'events_nonce');
@@ -303,7 +303,7 @@ function event_meta_callback( $post ) {
 }
 
 
-function event_meta_save( $post_id ) {
+function ole_event_meta_save( $post_id ) {
 	// checks save status
 
 
@@ -410,4 +410,4 @@ function event_meta_save( $post_id ) {
 	}
 
 }
-add_action ('save_post', 'event_meta_save');
+add_action ('save_post', 'ole_event_meta_save');
