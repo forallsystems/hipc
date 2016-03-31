@@ -62,7 +62,7 @@
 
 <!--Display cost with dividing line if available -->
   <?php if ( ! empty($event_cost_value)): ?>
-    <span class="divider">|</span><span class="event-cost-single"><?php echo $event_cost_value; ?></span>
+    <span class="divider">|</span><span class="event-cost-single"><?php echo esc_attr($event_cost_value); ?></span>
   <?php endif; ?>
   </div>
 
@@ -81,7 +81,7 @@
 <!--Display event description if available -->
 <div class="event-description-single">
   <?php if ( ! empty($event_description_value)): 
-    echo $event_description_value; ?>
+    echo esc_textarea($event_description_value); ?>
   <?php endif; ?>
 </div>
 
@@ -155,8 +155,8 @@
      <!--Display event website if available and open in a new tab -->
     <?php if ( ! empty($event_website_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Website:</h5>
-    <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_website_value; ?>" target="_blank">
-    <?php echo ($event_website_value) ; ?></a>
+    <a href="<?php if (!stristr($event_website_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo esc_url($event_website_value); ?>" target="_blank">
+    <?php echo esc_url($event_website_value) ; ?></a>
     <?php endif; ?>
 </div>
 
@@ -169,11 +169,11 @@
   <?php endif; ?> 
 
     <?php if ( ! empty($venue_street_address_value)) {
-    echo $venue_street_address_value; 
+    echo esc_attr($venue_street_address_value); 
 
       if (! empty($venue_address_2_value)) {
         echo ' '; 
-        echo $venue_address_2_value;
+        echo esc_attr($venue_address_2_value);
         echo '<br />';
       } else {
         echo '<br />';
@@ -181,28 +181,28 @@
     } ?>
 
     <?php if ( ! empty($venue_city_value)): 
-      echo $venue_city_value; ?>,
+      echo esc_attr($venue_city_value); ?>,
     <?php endif; ?>
 
     <?php if ( ! empty($venue_state_value)): 
-      echo $venue_state_value; ?>
+      echo esc_attr($venue_state_value); ?>
     <?php endif; ?>
 
     <?php if ( ! empty($venue_zipcode_value)): 
-      echo $venue_zipcode_value; ?>
+      echo esc_attr($venue_zipcode_value); ?>
     <?php endif; ?>
 
  <!--Display venue phone number if available -->
   <?php if ( ! empty($venue_phone_value)): ?>
   <h5 class="event-detail-labels" id="second-header">Phone:</h5>  
-  <?php echo $venue_phone_value; ?>
+  <?php echo esc_attr($venue_phone_value); ?>
   <?php endif; ?>
 
  <!--Display venue phone website if available -->
   <?php if ( ! empty($venue_website_value)): ?>
   <h5 class="event-detail-labels" id="second-header">Website:</h5>
-    <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo $venue_website_value; ?>" target="_blank">
-      <?php echo ($venue_website_value) ; ?></a>
+    <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo esc_url($venue_website_value); ?>" target="_blank">
+      <?php echo esc_url($venue_website_value) ; ?></a>
   <?php endif; ?>
 </div>
 
@@ -212,20 +212,20 @@
      <!--Display organizer if available -->
     <?php if ( ! empty($event_organizer_value)): ?>
     <h5 class="event-detail-labels">Organizer:</h5>
-    <?php echo $event_organizer_value; ?>
+    <?php echo esc_attr($event_organizer_value); ?>
     <?php endif; ?>
 
      <!--Display event notes if available -->
     <?php if ( ! empty($event_notes_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Notes:</h5>
-    <?php echo $event_notes_value; ?>
+    <?php echo esc_textarea($event_notes_value_; ?>
     <?php endif; ?>
 
     <!--Display event twitter and open in new tab if available -->
     <?php if ( ! empty($event_twitter_value)): ?>
     <h5 class="event-detail-labels" id="second-header">Twitter:</h5>
-    <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo $event_twitter_value; ?>" target="_blank">
-    <?php echo ($event_twitter_value) ; ?></a>
+    <a href="<?php if (!stristr($event_twitter_value, "http://") && !stristr($event_website_value, "https://") ) {echo "http://";} echo esc_url($event_twitter_value); ?>" target="_blank">
+    <?php echo esc_url($event_twitter_value) ; ?></a>
     <?php endif; ?>
   </div>
 

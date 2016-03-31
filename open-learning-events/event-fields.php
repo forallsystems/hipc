@@ -48,7 +48,7 @@ function ole_event_meta_callback( $post ) {
 	<div>
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-venue" class="event-row-title"><?php _e( 'Venue', 'hipc-events' ); ?></label>
+				<label for="event-venue" class="event-row-title"><?php _e( 'Venue', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<?php
@@ -100,7 +100,7 @@ function ole_event_meta_callback( $post ) {
 
 	<div class="meta-row">
 		<div class="meta-th">
-			<label for="event-start-date" class="event-row-title"><?php _e( 'Start Date', 'hipc-events' ); ?></label>
+			<label for="event-start-date" class="event-row-title"><?php _e( 'Start Date', 'ole-events' ); ?></label>
 		</div>
 		<div class="meta-td">
 			<input type="text" size=10 class="event-row-content datepicker" name="event_start_date" id="event-start-date" value="<?php if ( ! empty ( $event_stored_meta['event_start_date'][0] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_start_date'][0] ); ?>"/>
@@ -109,7 +109,7 @@ function ole_event_meta_callback( $post ) {
 
 	<div class="meta-row">
 			<div class="meta-th">
-				<label for="event_end_date" class="event-row-title"><?php _e( 'End Date', 'hipc-events' ) ?></label>
+				<label for="event_end_date" class="event-row-title"><?php _e( 'End Date', 'ole-events' ) ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" size=10 class="event-row-content datepicker" name="event_end_date" id="event_end_date" value="<?php if ( ! empty ( $event_stored_meta['event_end_date'][0] ) ) echo date_i18n( 'F j, Y', $event_stored_meta['event_end_date'][0] ); ?>"/>
@@ -118,7 +118,7 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-start-time" class="event-row-title"><?php _e( 'Start Time', 'hipc-events' ); ?></label>
+				<label for="event-start-time" class="event-row-title"><?php _e( 'Start Time', 'ole-events' ); ?></label>
 			</div>
 		<div class="time-hour">
 				<?php $event_start_time = '';?>
@@ -169,7 +169,7 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-end-time" class="event-row-title"><?php _e( 'End Time', 'hipc-events' ); ?></label>
+				<label for="event-end-time" class="event-row-title"><?php _e( 'End Time', 'ole-events' ); ?></label>
 			</div>
 		<div class="time-hour">
 				<?php $event_start_time = '';?>
@@ -221,12 +221,12 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 	        <div class="meta-th">
-	          <label for="event-description" class="event-row-title"><?php _e( 'Description', 'hipc-events' ) ?></label>
+	          <label for="event-description" class="event-row-title"><?php _e( 'Description', 'ole-events' ) ?></label>
 	        </div>
 	        <div class="meta-td">
 	          <textarea name="event_description" class="event-textarea" id="event-description"><?php
 	          if ( ! empty ( $event_stored_meta['event_description'] ) ) {
-		          echo esc_attr( $event_stored_meta['event_description'][0] );
+		          echo esc_textarea( $event_stored_meta['event_description'][0] );
 	          } ?></textarea>
 	        </div>
 	    </div>
@@ -234,7 +234,7 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-cost" class="event-row-title"><?php _e( 'Cost', 'hipc-events' ); ?></label>
+				<label for="event-cost" class="event-row-title"><?php _e( 'Cost', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_cost" id="event-cost" 
@@ -247,12 +247,12 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-website" class="event-row-title"><?php _e( 'Website', 'hipc-events' ); ?></label>
+				<label for="event-website" class="event-row-title"><?php _e( 'Website', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_website" id="event-website" 
 				value="<?php if ( ! empty ($event_stored_meta['event_website'] ) ) {
-					echo esc_attr( $event_stored_meta['event_website'][0] ); 
+					echo esc_url_raw( $event_stored_meta['event_website'][0] ); 
 				} ?>"/>
 			</div>
 		</div>
@@ -261,7 +261,7 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-organizer" class="event-row-title"><?php _e( 'Organizer', 'hipc-events' ); ?></label>
+				<label for="event-organizer" class="event-row-title"><?php _e( 'Organizer', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_organizer" id="event-organizer" 
@@ -275,12 +275,12 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 			<div class="meta-th">
-				<label for="event-twitter" class="event-row-title"><?php _e( 'Twitter', 'hipc-events' ); ?></label>
+				<label for="event-twitter" class="event-row-title"><?php _e( 'Twitter', 'ole-events' ); ?></label>
 			</div>
 			<div class="meta-td">
 				<input type="text" name="event_twitter" id="event-twitter" 
 				value="<?php if ( ! empty ($event_stored_meta['event_twitter'] ) ) {
-					echo esc_attr( $event_stored_meta['event_twitter'][0] ); 
+					echo esc_url_raw( $event_stored_meta['event_twitter'][0] ); 
 				} ?>"/>
 			</div>
 		</div>
@@ -289,12 +289,12 @@ function ole_event_meta_callback( $post ) {
 
 		<div class="meta-row">
 	        <div class="meta-th">
-	          <label for="event-notes" class="event-row-title"><?php _e( 'Notes', 'hipc-events' ) ?></label>
+	          <label for="event-notes" class="event-row-title"><?php _e( 'Notes', 'ole-events' ) ?></label>
 	        </div>
 	        <div class="meta-td">
 	          <textarea name="event_notes" class="event-textarea" id="event-notes"><?php
 	          if ( ! empty ( $event_stored_meta['event_notes'] ) ) {
-		          echo esc_attr( $event_stored_meta['event_notes'][0] );
+		          echo esc_textarea( $event_stored_meta['event_notes'][0] );
 	          } ?></textarea>
 	        </div>
 	    </div>
@@ -374,11 +374,11 @@ function ole_event_meta_save( $post_id ) {
 	}
 
 	if ( isset( $_POST['event_twitter'] ) ) {
-	update_post_meta( $post_id, 'event_twitter', sanitize_text_field($_POST[ 'event_twitter' ] ) );
+	update_post_meta( $post_id, 'event_twitter', esc_url_raw($_POST[ 'event_twitter' ] ) );
 	}
 
 	if ( isset( $_POST['event_website'] ) ) {
-	update_post_meta( $post_id, 'event_website', sanitize_text_field($_POST[ 'event_website' ] ) );
+	update_post_meta( $post_id, 'event_website', esc_url_raw($_POST[ 'event_website' ] ) );
 	}
 
 	if ( isset( $_POST['event_venue'] ) ) {

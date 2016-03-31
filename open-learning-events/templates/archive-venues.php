@@ -41,11 +41,11 @@ if( $my_query->have_posts() ) {
   <?php endif; ?> 
 
   <?php if ( ! empty($venue_street_address_value)) {
-    echo $venue_street_address_value; 
+    echo esc_attr($venue_street_address_value); 
 
     if (! empty($venue_address_2_value)) {
       echo ' '; 
-      echo $venue_address_2_value;
+      echo esc_attr($venue_address_2_value);
       echo '<br />';
     }
     else {
@@ -54,7 +54,7 @@ if( $my_query->have_posts() ) {
   } ?>
 
   <?php if ( ! empty($venue_city_value)): 
-    echo $venue_city_value; ?>,
+    echo esc_attr($venue_city_value); ?>,
   <?php endif; ?>
 
   <?php if ( ! empty($venue_state_value)): 
@@ -62,17 +62,17 @@ if( $my_query->have_posts() ) {
   <?php endif; ?>
 
   <?php if ( ! empty($venue_zipcode_value)): 
-    echo $venue_zipcode_value; ?>
+    echo esc_attr($venue_zipcode_value); ?>
     <br />
   <?php endif; ?>
 
   <?php if ( ! empty($venue_phone_value)): 
-    echo $venue_phone_value; ?>
+    echo esc_attr($venue_phone_value); ?>
     <br />
   <?php endif; ?>
 
 <?php if ( ! empty($venue_website_value)): ?>
-      <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo $venue_website_value; ?>"><?php echo ($venue_website_value) ; ?></a>
+      <a href="<?php if (!stristr($venue_website_value, "http://") && !stristr($venue_website_value, "https://") ) {echo "http://";} echo esc_url($venue_website_value); ?>"><?php echo esc_url($venue_website_value) ; ?></a>
         <br />
 <?php endif; ?>
 

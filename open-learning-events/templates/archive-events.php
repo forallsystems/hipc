@@ -58,7 +58,7 @@ if( $my_query->have_posts() ) {
   <div class="event-title">
      <p><a class="ole-event-url" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><h1><?php the_title(); ?></a></h1>
       <?php if ( ! empty($event_cost_value)): ?>
-      <span class="event-cost"><?php echo $event_cost_value; ?>
+      <span class="event-cost"><?php echo esc_attr($event_cost_value); ?>
       <br />
     <?php endif; ?></span></p>
   </div>
@@ -111,11 +111,11 @@ if( $my_query->have_posts() ) {
     <?php endif; ?>
 
     <?php if ( ! empty($venue_street_address_value)) {
-      echo $venue_street_address_value; 
+      echo esc_attr($venue_street_address_value); 
 
       if (! empty($venue_address_2_value)) {
         echo ' '; 
-        echo $venue_address_2_value;
+        echo esc_attr($venue_address_2_value);
         echo '<br />';
       }
       else {
@@ -125,7 +125,7 @@ if( $my_query->have_posts() ) {
   </div>
   <div class="venue-city">
     <?php if ( ! empty($venue_city_value)): 
-      echo $venue_city_value; ?>,
+      echo esc_attr($venue_city_value); ?>,
     <?php endif; ?>
 
     <?php if ( ! empty($venue_state_value)): 
@@ -133,7 +133,7 @@ if( $my_query->have_posts() ) {
     <?php endif; ?>
 
     <?php if ( ! empty($venue_zipcode_value)): 
-      echo $venue_zipcode_value; ?>
+      echo esc_attr($venue_zipcode_value); ?>
       <br />
     <?php endif; ?>
   </div>
@@ -148,7 +148,7 @@ if( $my_query->have_posts() ) {
     <?php endif; } ?>
 
     <?php if ( ! empty($event_description_value)): ?>
-      <div class="event-description"><?php echo $event_description_value; ?>
+      <div class="event-description"><?php echo esc_attr($event_description_value); ?>
         <div class="link-to-single-event">
           <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">Find out more >></a>
         </div>
