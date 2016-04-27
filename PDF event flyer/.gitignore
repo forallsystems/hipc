@@ -1,0 +1,12 @@
+
+.project
+
+.pydevproject
+
+*.pyc
+
+.settings/org.eclipse.core.resources.prefs
+
+.DS_Store
+
+backend/api/settings-production.py

@@ -1,0 +1,136 @@
+
+body {
+    background-color: rgb(182, 0, 0);
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 17px;    /* bigger! */
+    padding-bottom: 100px;
+}
+
+h3.title {
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3.padded {
+    padding-top: 100px;
+}
+
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+    color: white;
+    text-decoration: underline;
+    
+}
+
+#hipcform {
+    width: 650px;
+    margin: 0 auto;
+    
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: rgba(182, 0, 0, .5)
+}
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(182, 0, 0, .5)
+}
+.form-control:-ms-input-placeholder {  
+   color: rgba(182, 0, 0, .5)
+}
+.form-control::-webkit-input-placeholder {
+  color: rgba(182, 0, 0, .5)
+}
+
+button.btn-subscribe {
+    background-color: white;
+    color: rgb(182, 0, 0);
+    font-size: 17px;
+    font-weight: 700;
+    width: 200px;
+    height: 50px;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 50px;
+    font-size: 17px;
+}
+
+p {
+    text-align: center;  
+}
+
+.alert .glyphicon {
+    margin-right: 10px;
+}
+
+/* react-select overrides 
+*/
+
+.Select * {
+    font-size: 17px;
+}
+
+.Select-control {
+    height: 50px;
+}
+
+.Select-placeholder {
+    padding-top: 8px;
+    color: rgba(182, 0, 0, .5);
+ }
+.has-value > .Select-control > .Select-placeholder {
+    color: #555;
+}
+
+.Select-clear-zone,
+.Select--multi .Select-clear-zone {
+    width: 25px;
+}
+.Select-clear {
+    font-size: 20px;
+}
+
+.Select-arrow-zone {
+    width: 28px;
+}
+.Select-arrow {
+  border-color: #b60000 transparent transparent;
+  border-width: 8px 8px 4px;
+}
+.is-open .Select-arrow,
+.Select-arrow-zone:hover > .Select-arrow {
+  border-top-color: #b60000;
+}
+
+/* react-select does not provide styles for multi-selected items 
+*/
+.Select-item {
+    display: inline-block;
+    background-color: #ededed;
+    border: 1px solid #ccc;
+    padding: 5px 4px;
+    border-radius: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 6px;
+}
+
+.Select-item-icon {
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.Select-item-label {
+    margin-left: 4px;
+    margin-right: 4px;
+}
