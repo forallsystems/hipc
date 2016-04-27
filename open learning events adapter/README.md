@@ -1,5 +1,5 @@
-# hipc_ccol_rss
-Generates an RSS feed from CCOL scheduled programs.
+**Open Learning Events Adapter**
+The Open Learning Events Adapater utilizes the Open Learning Events Plugin and [FeedWordPress](https://wordpress.org/plugins/feedwordpress/) to pull information from an event site outside of WordPress for use on WordPress using AWS Lambda.
 
 ###Requirements:
 AWS Account

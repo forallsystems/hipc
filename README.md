@@ -22,7 +22,7 @@ This plugin is optimized for use with [Sela](https://wordpress.org/themes/sela/)
 *[Open Learning Events Adapter](https://github.com/forallsystems/hipc/tree/master/open%20learning%20events%20adapter)*  
 [[Example Site for Chicago City of Learning]](http://blog.forallbadges.com/ccolevents/events/)  
 
-The RSS Aggregrator utilizes the Open Learning Events Plugin and [FeedWordPress](https://wordpress.org/plugins/feedwordpress/) to pull information from an event site outside of WordPress for use on WordPress using AWS Lambda.   
+The Open Learning Events Adapter utilizes the Open Learning Events Plugin and [FeedWordPress](https://wordpress.org/plugins/feedwordpress/) to pull information from an event site outside of WordPress for use on WordPress using AWS Lambda.   
 
 *[PDF Event Flyer](https://github.com/forallsystems/hipc/tree/master/PDF%20event%20flyer)*   
 [[Weekly Flyer]](http://flyer.forallbadges.com/)  
