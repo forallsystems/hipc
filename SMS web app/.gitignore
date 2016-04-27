@@ -1,0 +1,12 @@
+
+.project
+
+.pydevproject
+
+*.pyc
+
+sms/settings-production.py
+
+hipc_ccol_sms-production-1460744466.zip
+
+sms/settings-dev.py
