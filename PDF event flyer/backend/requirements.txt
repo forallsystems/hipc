@@ -24,7 +24,7 @@ PyPDF2==1.25.1
 python-dateutil==2.4.2
 PyYAML==3.11
 reportlab==3.3.0
-requests==2.6.2
+requests==2.20.0
 rsa==3.3
 s3transfer==0.0.1
 semantic-version==2.5.0
