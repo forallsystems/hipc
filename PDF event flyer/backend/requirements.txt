@@ -22,7 +22,7 @@ Pillow==6.2.0
 pyasn1==0.1.9
 PyPDF2==1.25.1
 python-dateutil==2.4.2
-PyYAML==3.11
+PyYAML==5.1
 reportlab==3.3.0
 requests==2.6.2
 rsa==3.3
