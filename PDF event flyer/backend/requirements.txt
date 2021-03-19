@@ -6,7 +6,7 @@ cement==2.4.0
 colorama==0.3.3
 Django==1.11.23
 django-cors-headers==1.1.0
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 docker-py==1.1.0
 dockerpty==0.3.4
 docopt==0.6.2
