@@ -17,7 +17,7 @@ pyasn1==0.1.9
 python-dateutil==2.5.2
 pytz==2016.1
 requests==2.20.0
-rsa==3.3
+rsa==4.1
 s3transfer==0.0.1
 six==1.10.0
 tqdm==4.4.0
