@@ -25,7 +25,7 @@ python-dateutil==2.4.2
 PyYAML==5.1
 reportlab==3.3.0
 requests==2.20.0
-rsa==3.3
+rsa==4.7
 s3transfer==0.0.1
 semantic-version==2.5.0
 six==1.10.0
